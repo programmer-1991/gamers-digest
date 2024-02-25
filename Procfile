@@ -1,0 +1,1 @@
+web: gunicorn gamers_digest.wsgi
