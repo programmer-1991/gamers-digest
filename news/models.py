@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import user
+from django.contrib.auth.models import User
 
 STATUS = ((0, "draft"), (1, "published"))
 
@@ -7,7 +7,7 @@ STATUS = ((0, "draft"), (1, "published"))
 class Post(models.Model):
     title = models.CharField(max_length=64, unique=True)
     slug = models.SlugField(max_length=64, unique=True)
-    author = models.ForeignKey(User, on_delete = models.CASCADE, related_names = "news_posts")
+    author = models.ForeignKey(User, on_delete = models.CASCADE, related_name = "news_posts")
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add = True)
     status = models.IntegerField(choices=STATUS, default=0)
