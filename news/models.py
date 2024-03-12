@@ -5,8 +5,8 @@ STATUS = ((0, "draft"), (1, "published"))
 
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(max_length=64, unique=True)
-    slug = models.SlugField(max_length=64, unique=True)
+    title = models.CharField(max_length=256, unique=True)
+    slug = models.SlugField(max_length=256, unique=True)
     author = models.ForeignKey(User, on_delete = models.CASCADE, related_name = "news_posts")
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add = True)
