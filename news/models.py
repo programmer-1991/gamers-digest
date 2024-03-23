@@ -12,6 +12,7 @@ class Game(models.Model):
     def __str__(self):
         return f"{self.title}"
 
+        
 class Post(models.Model):
     title = models.CharField(max_length=256, unique=True)
     slug = models.SlugField(max_length=256, unique=True)
