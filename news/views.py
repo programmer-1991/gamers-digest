@@ -1,6 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import genric
+from .models import Post
+
 # Create your views here.
 
-def index(request):
-    return HttpResponse("Hello, dear user!")
+class PostList(generic.ListView):
+    model = Post
+
+
