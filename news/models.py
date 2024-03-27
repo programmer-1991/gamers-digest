@@ -8,6 +8,7 @@ class Game(models.Model):
     title = models.CharField(max_length=32, unique=True)
     genre = models.CharField(max_length=32)
     platform = models.IntegerField(choices = PLATFORM, default=0)
+    age_rating = models.IntegerField(null=True)
     developer = models.CharField(max_length=32)
     publisher = models.CharField(max_length=32)
     release = models.DateField()
