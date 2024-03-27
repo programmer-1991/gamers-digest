@@ -3,18 +3,18 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-GAME_CONSOLE = ((0, ""), (1, "Xbox series X|S"), (2, "Playstation 5"), (3, "Nintendo Switch"))
+PLATFORM = ((0, ""), (1, "Xbox"), (2, "Playstation"), (3, "Nintendo"))
 class Game(models.Model):
     title = models.CharField(max_length=32, unique=True)
     genre = models.CharField(max_length=32)
-    console = models.IntegerField(choices = GAME_CONSOLE, default=0)
+    platform = models.IntegerField(choices = PLATFORM, default=0)
     developer = models.CharField(max_length=32)
     publisher = models.CharField(max_length=32)
     release = models.DateField()
     def __str__(self):
         return f"{self.title}"
 
-        
+
 class Post(models.Model):
     title = models.CharField(max_length=256, unique=True)
     slug = models.SlugField(max_length=256, unique=True)
