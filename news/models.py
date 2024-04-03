@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 
 PLATFORM = ((0, ""), (1, "Xbox"), (2, "Playstation"), (3, "Nintendo"), (4, "Windows"))
 class Game(models.Model):
-    title = models.CharField(max_length=32, unique=True)
-    genre = models.CharField(max_length=32)
+    title = models.CharField(max_length=64, unique=True)
+    genre = models.CharField(max_length=64)
     platform = models.IntegerField(choices = PLATFORM, default=0)
     age_rating = models.IntegerField(null=True)
     developer = models.CharField(max_length=32)
