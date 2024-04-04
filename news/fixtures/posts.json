@@ -1,0 +1,29 @@
+[
+    {
+        "model": "news.post",
+        "pk": null,
+        "fields": {
+            "title": "The Legend of Zelda: Breath of the Wild wins prestigious Game of the Year awards",
+            "slug": "the-legend-of-zelda-breath-of-the-wild-wins-prestigious-game-of-the-year-awards",
+            "intro": "So many of you have been enjoying The Legend of Zelda: Breath of the Wild anytime, anywhere, thanks to Nintendo Switch. The game arrived in March and we’re thrilled to discover that the boundary breaking adventure has been picking up many prestigious end-of-year awards!",
+            "topic": 3,
+            "content": "<a href='https://www.nintendo.co.uk/News/2017/November/The-Legend-of-Zelda-Breath-of-the-Wild-wins-prestigious-Game-of-the-Year-awards-1306406.html'>News Source</a><p>At the recently held Golden Joystick Awards, The Legend of Zelda: Breath of the Wild won the coveted Ultimate Game of the Year award, as voted for by the public, as well as Critics Choice Award, Best Audio Award, and Nintendo Game of the Year Award! While they weren't able to attend, Eiji Aonuma, Satoru Takizawa, Takuhiro Dohta and Hajime Wakai from the development team have provided the following message: <a href= 'https://www.youtube.com/watch?v=YRKQURIQLcQ'>youtube video</a>\r\n</p><p>The Legend of Zelda: Breath of the Wild also picked up the Game of the Year award at The Game Awards, as well as Best Game Direction and Best Action/Adventure Game! The game also won Game of the Year at the PocketLint Gadget Awards and took critics’ breath away in their reviews.\r\n</p><p>Discover more about the game at the official <a href='https://www.nintendo.co.uk/Games/Nintendo-Switch-games/The-Legend-of-Zelda-Breath-of-the-Wild-1173609.html'>The Legend of Zelda: Breath of the Wild website</a>. New to Nintendo Switch? You can find out more about it at the <a href='https://www.nintendo.co.uk/Hardware/Nintendo-Switch-Family/Nintendo-Switch/Nintendo-Switch-1148779.html'>official website</a>.\r\n</p>",
+            "created_on": "2023-03-30T13:58:53.884Z",
+            "updated_on": "2023-03-31T09:43:19.754Z"
+        }
+     },
+
+    {
+        "model": "news.post",
+        "pk": null,
+        "fields": {
+            "title": "God of War Ragnarok Officially Gets November Release Date",
+            "slug": "god-of-war-ragnarok-officially-gets-november-release-date",
+            "intro": "God of War Ragnarok is officially launching on November 9 for PS4 and PS5.",
+            "topic": 4,
+            "content": "<a href='https://nordic.ign.com/god-of-war-ragnarok/57828/news/god-of-war-ragnarok-officially-gets-november-release-date'>News Source</a><p>Following rumors about a delay into 2023, and reassurances from the developers, the sequel to 2018's God of War reboot is indeed set to arrive this year. The news was accompanied by a short new CG trailer, titled Father and Son, which shows off Kratos and Atreus fighting off multiple threats – including an absolutely enormous wolf. Incidentally that wolf might well be Fenrir who in Norse mythology is the son of Loki. If you've played the last game in the series that's a complicated idea./r/n</p><p>Sony also announced that pre-orders will open on July 15, and showed off four separate editions of the game – including one with a full replica of Thor's Mjolnir. After being announced for a 2021 release, the return of Kratos and Atreus was eventually delayed into 2022 (apparently because of surgery undergone by lead voice actor Christopher Judge).Previous reports, including IGN's own sources, said the game was originally set to launch in September, but was pushed back to November./r/n</p><p>God of War: Ragnarok picks up from the Norse reboot for the classic action series, and a gameplay trailer showed us a familiar mix of fantasy combat, and family bickering. The game will finally introduce Thor, and will seemingly introduce some exciting changes to the action systems. In other God of War news, Sony is reportedly developing a God of War series for Amazon, to go along with its other series productions, like the Horizon series on Netflix and The Last of Us for HBO./r/n</p>",
+            "created_on": "2023-04-02T13:58:53.884Z",
+            "updated_on": "2023-04-04T09:43:19.754Z"
+        }
+    }
+]
