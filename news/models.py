@@ -19,7 +19,7 @@ class Game(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=256, unique=True)
     slug = models.SlugField(max_length=256, unique=True)
-    intro = models.CharField(max_length=256, blank=True)
+    intro = models.CharField(max_length=1024, blank=True)
     content = models.TextField()
     topic = models.ForeignKey(Game, on_delete = models.CASCADE, related_name = "news_posts", default=1)
     created_on = models.DateTimeField(auto_now_add = True)
