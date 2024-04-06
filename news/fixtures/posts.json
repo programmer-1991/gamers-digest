@@ -25,5 +25,20 @@
             "created_on": "2024-04-02T13:58:53.884Z",
             "updated_on": "2024-04-04T09:43:19.754Z"
         }
-    }
+    },
+
+    {
+        "model": "news.post",
+        "pk": null,
+        "fields": {
+            "title": "Mario Kart 8 Deluxe Has Been Updated To Version 3.0.0, Here Are The Full Patch Notes",
+            "slug": "mario-kart-8-deluxe-has-been-updated-to-version-300-here-are-the-full-patch-notes",
+            "intro": "The final wave of DLC is now available",
+            "topic": 5,
+            "content": "<p>Today marks the arrival of the Mario Kart 8 Deluxe 'Wave 6' Booster Course Pass DLC for Nintendo Switch. This is the final wave of additional content and brings the total amount of DLC courses to 48. All up though there is now 96 courses from across the series to speed through.</p><p>This new update comes with the Acorn Cup and Spiny Cup, and eight courses in total covering the SNES, GameCube, Wii, 3DS and mobile era of Mario Kart. Along with this, Nintendo has added four more racers including Diddy Kong, Funky Kong, Pauline and Peachette.</p><p>And to top it off, there are also some new Mii Suits, a new jukebox option, and some 'general' updates and fixes. Here's the full rundown, courtesy of Nintendo's official support page:</p><h1>Mario Kart 8 Deluxe - Ver. 3.0.0 (Released November 8th, 2023)</h1><h3>Support for DLC</h3><ul><li>Added paid DLC: Mario Kart 8 Deluxe – Booster Course Pass, Wave 6 (two cups, eight courses, four characters, 17 Mii racing suits).</li></ul><h3>General</h3><ul><li>Added “Music” button to the top menu.</li><li>Added feature where other players who aren’t friends can join in a Room.</li><li>Made it so that you can create a Room even if you have 0 friends registered.</li><li>Added staff credits for the Booster Couse Pass.</li><li>Increased the invincibility time of a portion of characters and vehicle customizations.</li><li>Made it so that you can’t acquire strong items when taking an Item Box by stopping or driving in reverse, or taking an Item Box that is in same location multiple times during a race.</li><li>Shortened the time between when an Item Box is acquired by someone until it is restored.</li><li>Lowered the appearance rate of Mirror and 200cc in “Worldwide” and “Regional.”</li><li>Made it so you can acquire the “Varia Suit” when using a Metroid series amiibo.</li><li>Made it so you can acquire the “Hylian Suit” when using a Legend of Zelda series amiibo.</li><li>Made it so you can acquire the “Kirby Suit” when using a Kirby series amiibo.</li><li>Made it so you can acquire the “Daisy Suit” when using a Daisy amiibo.</li></ul><h3>Fixed Issues</h3><ul><li>Fixed an issue where no Bob-omb car blows up in Wii Moonview Highway, but a Bob-omb car blows up for someone you are playing with online.</li><li>Fixed an issue where, when racing against a Ghost in Time Trials on Yoshi's Island, the red road would not appear even though the Ghost touched the Winged Cloud.</li></ul>",
+            "created_on": "2024-04-05T13:58:53.884Z",
+            "updated_on": "2024-04-05T09:43:19.754Z"
+        }
+     }
+
 ]
