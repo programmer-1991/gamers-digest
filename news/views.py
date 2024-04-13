@@ -9,18 +9,18 @@ class PostList(generic.ListView):
     template_name = "news/index.html"
     paginate_by = 6
 
-def post_detail(request, slug):
+def post(request, slug):
     """
-    Display an individual :model:`blog.Post`.
+    Display an individual :model:`news.Post`.
 
     **Context**
 
     ``post``
-        An instance of :model:`blog.Post`.
+        An instance of :model:`news.Post`.
 
     **Template:**
 
-    :template:`blog/post_detail.html`
+    :template:`blog/post.html`
     """
 
     queryset = Post.objects.all()
