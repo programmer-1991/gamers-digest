@@ -14,4 +14,11 @@ class PostAdmin(SummernoteModelAdmin):
 
 
 # Register your models here.
-admin.site.register(Game)
+@admin.register(Game)
+class GameAdmin(SummernoteModelAdmin):
+    
+    list_display = ('title', 'release')
+    search_fields = ['title', '']
+    list_filter = ('release',)
+    prepopulated_fields = {'slug': ('title',)}
+    summernote_fields = ('',)

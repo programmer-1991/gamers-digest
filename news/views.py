@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import Post
+from .models import Post, Game
 
 # Create your views here.
 
@@ -10,24 +10,23 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 def post(request, slug):
-    """
-    Display an individual :model:`news.Post`.
-
-    **Context**
-
-    ``post``
-        An instance of :model:`news.Post`.
-
-    **Template:**
-
-    :template:`blog/post.html`
-    """
 
     queryset = Post.objects.all()
     post = get_object_or_404(queryset, slug=slug)
-
+    game = post.topic
     return render(
         request,
         "news/post.html",
-        {"post": post},
+        {"post": post, "game": game},
+    )
+
+def game(request, id):
+
+    queryset = Game.objects.all()
+    game = get_object_or_404(queryset, id=id)
+    posts = game.posts.all().order_by("-created_on")
+    return render(
+        request,
+        "news/game.html",
+        {"game": game, "posts": posts},
     )
