@@ -20,10 +20,10 @@ def post(request, slug):
         {"post": post, "game": game},
     )
 
-def game(request, id):
+def game(request, slug):
 
     queryset = Game.objects.all()
-    game = get_object_or_404(queryset, id=id)
+    game = get_object_or_404(queryset, slug=slug)
     posts = game.posts.all().order_by("-created_on")
     return render(
         request,
