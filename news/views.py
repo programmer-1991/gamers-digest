@@ -10,7 +10,6 @@ class PostList(generic.ListView):
     paginate_by = 6
 
 def post(request, slug):
-
     queryset = Post.objects.all()
     post = get_object_or_404(queryset, slug=slug)
     game = post.topic

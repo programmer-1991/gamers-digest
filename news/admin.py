@@ -21,4 +21,4 @@ class GameAdmin(SummernoteModelAdmin):
     search_fields = ['title', '']
     list_filter = ('release',)
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('',)
+    summernote_fields = ('description',)
