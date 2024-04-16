@@ -3,9 +3,8 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-
+PLATFORM = ((0, ""), (1, "Xbox"), (2, "Playstation"), (3, "Nintendo"), (4, "Windows"))
 class Game(models.Model):
-    PLATFORM = ((0, ""), (1, "Xbox"), (2, "Playstation"), (3, "Nintendo"), (4, "Windows"))
     title = models.CharField(max_length=64, unique=True)
     slug = models.SlugField(max_length=256, null=True)    
     genre = models.CharField(max_length=64)
