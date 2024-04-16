@@ -23,9 +23,10 @@ def game(request, slug):
 
     queryset = Game.objects.all()
     game = get_object_or_404(queryset, slug=slug)
+    platform = Game.PLATFORM[game.platform][1]
     posts = game.posts.all().order_by("-created_on")
     return render(
         request,
         "news/game.html",
-        {"game": game, "posts": posts},
+        {"game": game, "posts": posts, "platform": platform},
     )

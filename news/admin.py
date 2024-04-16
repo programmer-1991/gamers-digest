@@ -5,7 +5,7 @@ from django_summernote.admin import SummernoteModelAdmin
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     
-    list_display = ('title', 'slug', 'created_on')
+    list_display = ('title', 'slug', 'topic', 'created_on')
     search_fields = ['title', 'content']
     list_filter = ('created_on',)
     prepopulated_fields = {'slug': ('title',)}
@@ -17,8 +17,8 @@ class PostAdmin(SummernoteModelAdmin):
 @admin.register(Game)
 class GameAdmin(SummernoteModelAdmin):
     
-    list_display = ('title', 'release')
+    list_display = ('title', 'platform', 'release')
     search_fields = ['title', '']
-    list_filter = ('release',)
+    list_filter = ('platform',)
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('description',)
