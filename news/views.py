@@ -38,7 +38,6 @@ def game(request, slug):
             
     post_form = PostForm()
 
-    
     return render(
         request,
         "news/game.html",
