@@ -27,7 +27,18 @@ def game(request, slug):
     platform = Game.PLATFORM[game.platform][1]
     posts = game.posts.all().order_by("-created_on")
     post_count = game.posts.all()
+    
+    if request.method == "POST":
+        post_form = PostForm(data=request.POST)
+        if post_form.is_valid():
+            post = post_form.save(commit=False)
+            post.author = request.user
+            post.post = post
+            post.save()
+            
     post_form = PostForm()
+
+    
     return render(
         request,
         "news/game.html",
