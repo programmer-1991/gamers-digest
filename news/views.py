@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Post, Game
+from .forms import PostForm
 
 # Create your views here.
 
@@ -25,8 +26,12 @@ def game(request, slug):
     game = get_object_or_404(queryset, slug=slug)
     platform = Game.PLATFORM[game.platform][1]
     posts = game.posts.all().order_by("-created_on")
+    post_count = game.posts.all()
+    post_form = PostForm()
     return render(
         request,
         "news/game.html",
-        {"game": game, "posts": posts, "platform": platform},
+        {"game": game, "posts": posts, "platform": platform, 
+         "post_count": post_count, "post_form": post_form,
+        },
     )
