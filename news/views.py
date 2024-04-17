@@ -5,6 +5,28 @@ from .models import Post, Game
 from .forms import PostForm
 
 # Create your views here.
+def create(request):
+    if request.method == "POST":
+        post_form = PostForm(data=request.POST)
+        if post_form.is_valid():
+            post = post_form.save(commit=False)
+            post.author = request.user
+            post.post = post
+            post.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Post is created'
+            )
+    post_form = PostForm()
+
+    return render(
+        request,
+        "news/create_post.html",
+        {"post_form": post_form,
+        },
+    )
+    
+
 
 class PostList(generic.ListView):
     queryset = Post.objects.all()
@@ -29,24 +51,12 @@ def game(request, slug):
     posts = game.posts.all().order_by("-created_on")
     post_count = game.posts.all()
     
-    if request.method == "POST":
-        post_form = PostForm(data=request.POST)
-        if post_form.is_valid():
-            post = post_form.save(commit=False)
-            post.author = request.user
-            post.post = post
-            post.save()
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Post is created'
-        )
-    
-    post_form = PostForm()
-
     return render(
         request,
         "news/game.html",
         {"game": game, "posts": posts, "platform": platform, 
-         "post_count": post_count, "post_form": post_form,
+         "post_count": post_count,
         },
     )
+    
+    
