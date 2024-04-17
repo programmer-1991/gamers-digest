@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
+from django.contrib import messages
 from .models import Post, Game
 from .forms import PostForm
 
@@ -35,7 +36,11 @@ def game(request, slug):
             post.author = request.user
             post.post = post
             post.save()
-            
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Post is created'
+        )
+    
     post_form = PostForm()
 
     return render(
