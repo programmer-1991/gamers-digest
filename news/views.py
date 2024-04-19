@@ -3,6 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from .models import Post, Game
 from .forms import PostForm
+from django.utils.text import slugify
 
 # Create your views here.
 def create(request):
@@ -12,6 +13,7 @@ def create(request):
             post = post_form.save(commit=False)
             post.author = request.user
             post.post = post
+            post.slug = slugify(post.title)
             post.save()
             messages.add_message(
                 request, messages.SUCCESS,
