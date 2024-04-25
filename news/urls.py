@@ -6,5 +6,5 @@ urlpatterns = [
     path('create/', views.create, name = 'create'),
     path('game/<slug:slug>/', views.game, name='game'),
     path('<slug:slug>/', views.post, name='post'),
-    
+    path('edit/<slug:slug>', views.post_edit, name='post_edit'),
 ]

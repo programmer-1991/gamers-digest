@@ -1,0 +1,34 @@
+const editButtons = document.getElementsByClassName("btn-edit");
+const contentField = document.getElementById("id_content");
+const titleField = document.getElementById("id_title");
+const introField = document.getElementById("id_intro");
+const topicField = document.getElementById("id_topic")
+const postForm = document.getElementById("postForm");
+const submitButton = document.getElementById("submitButton");
+
+/**
+ * Initializes edit functionality for the provided edit buttons.
+ * 
+ * For each button in the `editButtons` collection:
+ * - Retrieves the associated comment's ID upon click.
+ * - Fetches the content of the corresponding comment.
+ * - Populates the `commentText` input/textarea with the comment's content for editing.
+ * - Updates the submit button's text to "Update".
+ * - Sets the form's action attribute to the `edit_comment/{commentId}` endpoint.
+ */
+for (let button of editButtons) {
+    button.addEventListener("click", (e) => {
+        const slug = e.target.getAttribute("slug");
+        const postContent = document.getElementById("content").innerHTML;
+        const postTitle = document.getElementById("title").innerText;
+        const postIntro = document.getElementById("intro").innerText;
+        const postTopic = document.getElementById("topic").getAttribute("topic");
+        console.log(postContent);
+        topicField.value = postTopic;
+        introField.value = postIntro;
+        titleField.value = postTitle;
+        contentField.value = postContent;
+        submitButton.innerText = "Update";
+        postForm.setAttribute("action", `/edit/${slug}`);
+    });
+}

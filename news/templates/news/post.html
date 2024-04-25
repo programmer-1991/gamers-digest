@@ -6,9 +6,14 @@
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
                 <!-- Post title goes in these h1 tags -->
-                <h1 class="p-4">{{ post.title }}</h1>
+                <h1 class="p-4" id="title">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle"><a href="{% url 'game' game.slug %}">{{ game }}</a> | updated on {{ post.updated_on }}</p>    
+                <p class="post-subtitle"><a href="{% url 'game' game.slug %}" id="topic" topic="{{ game.id }}">{{ game }}</a> | updated on
+                    {{ post.updated_on }}</p>
+                <!--Edit button-->
+                {% if user.is_authenticated %}
+                <button class="btn btn-edit" slug="{{ post.slug }}">Edit</button>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -16,15 +21,40 @@
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
-            <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text">
-                    {{ post.content | safe }}
-                </p>
+            <div class="card-intro" id="intro">
+                {{ post.intro }}
+            </div>
+            <div class="card-body" id="content">
+                {{ post.content | safe }}
             </div>
         </div>
     </div>
 </div>
 
+{% load crispy_forms_tags %}
+
+<!-- Creating New Posts -->
+<div class="col-md-4 card mb-4 mt-3">
+    <div class="card-body">
+        {% if user.is_authenticated %}
+        <h3>Leave a post:</h3>
+        <p>Posting as: {{ user.username }}</p>
+
+        <form id="postForm" method="post" class="mt-3">
+            {{ form | crispy }}
+            {% csrf_token %}
+            <!--submit button-->
+            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+
+        </form>
+        {% else %}
+        <p class="center">Log in to add a post</p>
+        {% endif %}
+    </div>
+</div>
+
 {% endblock content %}
+
+{% block extras %}
+<script src="{% static 'js/posts.js' %}"></script>
+{% endblock %}

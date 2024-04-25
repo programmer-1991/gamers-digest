@@ -23,7 +23,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=256, unique=True)
     intro = models.CharField(max_length=1024, blank=True)
     content = models.TextField()
-    topic = models.ForeignKey(Game, on_delete = models.CASCADE, related_name = "posts", default=1)
+    topic = models.ForeignKey(Game, on_delete = models.CASCADE, related_name = "posts", default=0)
     created_on = models.DateTimeField(auto_now_add = True)
     updated_on = models.DateTimeField(auto_now = True)
     class Meta:
