@@ -8,7 +8,7 @@ const submitButton = document.getElementById("submitButton");
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
-
+const formCard = document.getElementById("form")
 /**
  * Initializes edit functionality for the provided edit buttons.
  * 
@@ -27,13 +27,14 @@ for (let button of editButtons) {
         const postIntro = document.getElementById("intro").innerText;
         const postTopic = document.getElementById("topic").getAttribute("topic");
 
-
         topicField.value = postTopic;
         introField.value = postIntro;
         titleField.value = postTitle;
         contentField.value = postContent;
         submitButton.innerText = "Update";
-        postForm.setAttribute("action", `/edit/${slug}`);
+        formCard.style.display = "block";
+        formCard.scrollIntoView();
+        postForm.setAttribute("action", `/edit/${slug}/`);
     })};
         /**
          * Initializes deletion functionality for the provided delete buttons.
