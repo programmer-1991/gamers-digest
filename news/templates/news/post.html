@@ -13,6 +13,7 @@
                 <!--Edit button-->
                 {% if user.is_authenticated %}
                 <button class="btn btn-edit" slug="{{ post.slug }}">Edit</button>
+                <button class="btn btn-delete" slug="{{ post.slug }}">Delete</button>
                 {% endif %}
             </div>
         </div>
@@ -51,6 +52,31 @@
         <p class="center">Log in to add a post</p>
         {% endif %}
     </div>
+</div>
+
+<!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1"
+  aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"
+          id="deleteModalLabel">Delete post?</h5>
+        <button type="button" class="btn-close"
+          data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete your post?
+        This action cannot be undone.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+          data-bs-dismiss="modal">Close</button>
+        <a id="deleteConfirm" href="#" class="btn
+          btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock content %}

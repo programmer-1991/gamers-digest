@@ -33,6 +33,18 @@ def create(request):
         },
     )
 
+def post_delete(request, slug):
+    """
+    view to delete comment
+    """
+    queryset = Post.objects.all()
+    post = get_object_or_404(queryset, slug=slug)
+    #comment = get_object_or_404(Comment, pk=comment_id)
+    post.delete()
+    messages.add_message(request, messages.SUCCESS, 'Post deleted!')
+
+    return HttpResponseRedirect(reverse('home'))
+
 def post_edit(request, slug):
     """
     view to edit posts
