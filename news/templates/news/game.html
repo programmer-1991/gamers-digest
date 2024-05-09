@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
@@ -7,7 +7,7 @@
         <h1>{{ game.title }}</h1>
     </div>
     <div class="row">
-        <div class="col card mb-4 mt-3 left top">
+        <div class="col card mb-4 mt-3 left top game-card cell">
             <div class="image-container">
                 {% if "placeholder" in game.featured_image.url %}
                 <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
@@ -15,25 +15,31 @@
                 <img class="card-img-top" src=" {{ game.featured_image.url }}" alt="{{ post.title }}">
                 {% endif %}
             </div>
-            <div class="card-body">
-                <h3>Game Details</h3>
+            <div class="card-body details">
+                <h3 class="text-center">Game Details</h3>
                 <dl class="mt-3">
-                    <dt>Developed by</dt>
-                    <dd>{{ game.developer }}</dd>
-                    <dt>Published by</dt>
-                    <dd>{{ game.publisher}}</dd>
-                    <dt>Platform</dt>
-                    <dd>{{ platform }}</dd>
-                    <dt>Genre</dt>
-                    <dd>{{ game.genre }}</dd>
-                    <dt>Release date</dt>
-                    <dd>{{ game.release }}</dd>
-                    <dt>Game rating</dt>
-                    <dd>{{ game.age_rating}}</dd>
+                    <div class="row">
+                        <div class="col">
+                            <dt>Developed by</dt>
+                            <dd>{{ game.developer }}</dd>
+                            <dt>Published by</dt>
+                            <dd>{{ game.publisher}}</dd>
+                            <dt>Platform</dt>
+                            <dd>{{ platform }}</dd>
+                        </div>
+                        <div class="col">
+                            <dt>Genre</dt>
+                            <dd>{{ game.genre }}</dd>
+                            <dt>Release date</dt>
+                            <dd>{{ game.release }}</dd>
+                            <dt>Game rating</dt>
+                            <dd>{{ game.age_rating}}</dd>
+                        </div>
+                    </div>
                 </dl>
             </div>
         </div>
-        <div class="col card mb-4 mt-3 left top">
+        <div class="col card mb-4 mt-3 left top cell description">
             <div class="card-body">
                 <div class="card-text">
                     <h3>Description</h3>
@@ -49,6 +55,7 @@
 
             <!-- News Entries Column -->
             <div class="col-12 mt-3 left">
+                <h2>Related posts:</h2>
                 <div class="row">
                     {% for post in posts %}
                     <div class="col-md-4">
