@@ -18,6 +18,12 @@ class TestPostViews(TestCase):
         
     def test_render_game_page(self):
         response = self.client.get(reverse('game', args=['a-game']))
-        self.assertEqual(response.status_code, 200)        
+        self.assertEqual(response.status_code, 200)
         self.assertIn(b"a game", response.content)
         self.assertIn(b"May 31, 2024", response.content)
+        
+    def test_render_create_page(self):        
+        response = self.client.get(reverse('create', args=[]))
+        self.assertEqual(response.status_code, 200)
+        self.assertIsInstance(response.context['post_form'], PostForm)
+        
