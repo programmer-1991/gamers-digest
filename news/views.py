@@ -50,11 +50,10 @@ def post_edit(request, slug):
     view to edit posts
     """
     if request.method == "POST":
-
         queryset = Post.objects.all()
         post = get_object_or_404(queryset, slug=slug)
         form = PostForm(data=request.POST, instance=post)
-
+        
         if form.is_valid():
             post = form.save(commit=False)
             #post.game = game
