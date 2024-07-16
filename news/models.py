@@ -6,7 +6,7 @@ from cloudinary.models import CloudinaryField
 class Game(models.Model):
     PLATFORM = ((0, ""), (1, "Xbox"), (2, "Playstation"), (3, "Nintendo"), (4, "Windows"))
     title = models.CharField(max_length=256, unique=True)
-    slug = models.SlugField(max_length=256, null=True)    
+    slug = models.SlugField(max_length=256, null=True)
     genre = models.CharField(max_length=64)
     description = models.TextField(max_length=8192, null=True)
     platform = models.IntegerField(choices = PLATFORM, default=0)
