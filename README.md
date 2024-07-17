@@ -5,8 +5,12 @@ Gamers Digest is a website that aims to keep gamers updated with the latest gami
 
 ## Project goals:
 - __User goals__
-- __Site owner goals__ 
-
+  - To keep updated with the latest news in the gaming industry
+  - To explore content on a wide range of games, genres, and platforms
+- __Site owner goals__
+  - To showcase a fullstack web application that meets the assessment criteria
+  - To create a service that provides a useful and informative content for gamers
+  
 ## User experience
 - __Target audience__
 - __User expectations__
@@ -15,7 +19,7 @@ Gamers Digest is a website that aims to keep gamers updated with the latest gami
 ## Database
 - __News application database schema__
   - User table
-  - Post table 
+  - Post table
   - Game table
   
 ## Design
