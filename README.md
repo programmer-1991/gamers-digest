@@ -44,7 +44,6 @@ This epic deals with the core functionalities of the blog, such as creating, rea
 - Receive Validating Messages (SHOULD HAVE)
 - Follow Other Users (WON'T HAVE)
 
-
 ### Epic 3: Administration & Analytics
 This epic encompasses administrative control over the site, including user account management and content moderation, as well as tracking user engagement.
 
@@ -64,10 +63,35 @@ This epic is focused on the overall user experience on the site, such as the app
 
 ## Database
 - __News application database schema__
-  - User table
-  - Post table
-  - Game table
-  
+
+When creating the database structure schema for this project, I utilized the [dbdiagram.io](https://dbdiagram.io/) website. This online tool allowed me to visually design and document the database schema, making it easier to plan and implement the database for the news application.
+
+<center> 
+
+![Database Schema image](directory)
+
+</center>
+
+## Database Schema Summary
+
+### `User` Table
+- Represents the basic user information according to Django's built-in User model.
+- Fields: `username`, `email`, `password`.
+
+### `Platform` Table
+- Stores the different platforms that the superuser can select when creating a game.
+- Fields: `platform_id`, `platform_name`.
+
+### `Post` Table
+- Stores comments made by users on blog posts.
+- Fields: `post_id`, `title`,`slug`, `intro`, `content`, `topic`, `created_on`, `updated_on`.
+
+### `Game` Table
+- Stores news posts written by the superuser.
+- Fields: `game_id`, `title`, `slug`, `genre`, `description`, `platform`, `age_rating`, `developer`, `publisher`, `release`,  `featured_image`.
+
+This database schema lays out the structure for the Gamers Digest application, giving an opportunity for gamers to easily keep updated with the latest gaming news and game details including releases.S 
+
 ## Design
 - __Color__
 - __Typography__
