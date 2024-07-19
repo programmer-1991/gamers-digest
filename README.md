@@ -122,9 +122,10 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
 
   - **News Post View:**
     - Each news post can be viewed in its entirety on a dedicated page.
-    - This view presents an engaging card that presents the title, topic, and updated date.
+    - This view presents an engaging card that presents the title, topic, intro, and updated date.
     - Also two clickable buttons, 'Edit' and 'Delete', are included when the poster is logged in.
-    - Right after that the intro and detailed content about the news.
+    - Right after that a detailed content about the news.
+    - Below the news content, the user can see a list of related posts to the game
 
   - **Create Post View:**
     - This page is a form for submitting posts.
