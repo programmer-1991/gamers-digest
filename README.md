@@ -155,6 +155,39 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
 
 ## Deployment
 
+**Create the Heroku app:**
+
+- Navigate to your Heroku dashboard and create a new app with a unique name.
+- Click on the Settings tab and reveal the config vars. 
+- Add a key of DISABLE_COLLECTSTATIC and a value of 1 and click Add. 
+- This step prevents Heroku from uploading static files, such as CSS and JS, during the build.
+---
+**Update your code for deployment:**
+
+- Install a production-ready webserver for Heroku using the command <mark>pip3 install gunicorn~=20.1</mark>
+- Add gunicorn==20.1.0 to the requirements.txt file with: <mark>pip3 freeze --local > requirements.txt</mark>
+- Create a file named Procfile at the root directory of the project (same directory as requirements.txt).
+- In the Procfile, declare this is a web process followed by the command to execute your Django project and start the server.
+  <mark>web: gunicorn my_project.wsgi</mark> This assumes your project is named my_project.
+- Open the my_project/settings.py file and replace DEBUG=True with DEBUG=False. and append the '.herokuapp.com' hostname to the ALLOWED_HOSTS list.
+- Git add, commit and push the code to your GitHub repo.
+---
+**Connect Heroku to PostgreSQL database:**
+- Navigate to heroku dashbord and return to settings.
+- Click on <mark>Reveal Config Vars</mark> and add <mark>DATABASE_URL</mark>.
+- Note! if ElephantSQL is used as a PostgreSQL provider. 
+- Navigate to https://www.elephantsql.com/, log in and create a database instance.
+- Open your created instance and go to the details tag.
+- copy the provided PostgreSQL <mark>URL</mark>.
+- Assign it as a value to DATABASE_URL in the Heroku dashboard.
+- Now your PostgreSQL cloud database is connected to your deployed app.
+---
+**Deploy to Heroku:**
+- Now, let's return to the Heroku dashboard, and in your app, click on the Deploy tab. 
+- In the Deployment method section enable GitHub integration by clicking on Connect to GitHub.
+- Search for your GitHub repo and connect it to the Heroku app. 
+- Scroll down and Manually deploy the main branch of this GitHub repo. In your new app’s resources tab, ensure you are using an eco dyno and delete any Postgres database Add-on.
+- Click on <mark>Open app</mark> to open the rendered webpage.
 
 ## Credits
 ### Content
