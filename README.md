@@ -181,6 +181,12 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
 - copy the provided PostgreSQL <mark>URL</mark>.
 - Assign it as a value to DATABASE_URL in the Heroku dashboard.
 - Now your PostgreSQL cloud database is connected to your deployed app.
+
+ **Environment Variables Setup in workspace:**
+   - Create a new file called <mark>env.py</mark> and import the <mark>os</mark> library.
+   - Set <mark>DATABASE_URL</mark> environment variable to the provided PostgreSQL URL.
+   - Add a secret key using <mark>os.environ("SECRET_KEY", your secret key here)</mark>.
+   - Add the secret key to the Heroku app's config vars in the settings.
 ---
 **Deploy to Heroku:**
 - Now, let's return to the Heroku dashboard, and in your app, click on the Deploy tab. 
