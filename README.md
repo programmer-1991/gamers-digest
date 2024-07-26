@@ -198,6 +198,15 @@ By forking the GitHub Repository, you can create a copy of the original reposito
 - Locate the Repository. Note! the repository is at https://github.com/programmer-1991/gamers-digest.
 - At the top right of the repository page, click "Fork" to create a copy in your own GitHub repository.
 
+**Clone the Repository:**
+When you create a repository on GitHub.com, it exists as a remote repository. You can clone your repository to create a local copy on your computer and sync between the two locations.Creating a clone allows you to have a local copy of the project. Follow these steps:
+
+- Navigate to https://github.com/programmer-1991/gamers-digest.
+- Click the green "Code" button at the top right.
+- Select the "Clone by HTTPS" option and copy the web URL to the clipboard.
+- Open your code editor or terminal and navigate to the directory where you want to clone the repository.
+- Run `git clone` followed by the copied URL.
+- Press enter, and Git will clone the repository to your local machine.
 
 ## Credits
 ### Content
