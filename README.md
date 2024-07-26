@@ -158,8 +158,8 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
 **Create the Heroku app:**
 
 - Navigate to your Heroku dashboard and create a new app with a unique name.
-- Click on the Settings tab and reveal the config vars. 
-- Add a key of DISABLE_COLLECTSTATIC and a value of 1 and click Add. 
+- Click on the Settings tab and reveal the config vars.
+- Add a key of DISABLE_COLLECTSTATIC and a value of 1 and click Add.
 - This step prevents Heroku from uploading static files, such as CSS and JS, during the build.
 ---
 **Update your code for deployment:**
@@ -181,19 +181,23 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
 - copy the provided PostgreSQL <mark>URL</mark>.
 - Assign it as a value to DATABASE_URL in the Heroku dashboard.
 - Now your PostgreSQL cloud database is connected to your deployed app.
-
- **Environment Variables Setup in workspace:**
-   - Create a new file called <mark>env.py</mark> and import the <mark>os</mark> library.
-   - Set <mark>DATABASE_URL</mark> environment variable to the provided PostgreSQL URL.
-   - Add a secret key using <mark>os.environ("SECRET_KEY", your secret key here)</mark>.
-   - Add the secret key to the Heroku app's config vars in the settings.
 ---
 **Deploy to Heroku:**
-- Now, let's return to the Heroku dashboard, and in your app, click on the Deploy tab. 
+- Add the environment variable <mark>SECRET KEY</mark> to the Heroku app's config vars in the settings for security reasons.
+- Now, let's return to the Heroku dashboard, and in your app, click on the Deploy tab.
 - In the Deployment method section enable GitHub integration by clicking on Connect to GitHub.
-- Search for your GitHub repo and connect it to the Heroku app. 
-- Scroll down and Manually deploy the main branch of this GitHub repo. In your new app’s resources tab, ensure you are using an eco dyno and delete any Postgres database Add-on.
+- Search for your GitHub repo and connect it to the Heroku app.
+- Scroll down and Manually deploy the main branch of this GitHub repo.
+- In your new app’s resources tab, ensure you are using an eco dyno and delete any Postgres database Add-on.
 - Click on <mark>Open app</mark> to open the rendered webpage.
+---
+### Fork the Repository:
+By forking the GitHub Repository, you can create a copy of the original repository without affecting the original. To implement that follow these steps below:
+
+- Log into GitHub account or create one if you don't have one.
+- Locate the Repository. Note! the repository is at https://github.com/programmer-1991/gamers-digest.
+- At the top right of the repository page, click "Fork" to create a copy in your own GitHub repository.
+
 
 ## Credits
 ### Content
