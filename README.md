@@ -199,7 +199,7 @@ By forking the GitHub Repository, you can create a copy of the original reposito
 - At the top right of the repository page, click "Fork" to create a copy in your own GitHub repository.
 
 **Clone the Repository:**
-When you create a repository on GitHub.com, it exists as a remote repository. You can clone your repository to create a local copy on your computer and sync between the two locations.Creating a clone allows you to have a local copy of the project. Follow these steps:
+When you create a repository on GitHub.com, it exists as a remote repository. You can clone your repository to create a local copy on your computer and sync between the two locations. Creating a clone allows you to have a local copy of the project. Follow these steps:
 
 - Navigate to https://github.com/programmer-1991/gamers-digest.
 - Click the green "Code" button at the top right.
@@ -208,6 +208,36 @@ When you create a repository on GitHub.com, it exists as a remote repository. Yo
 - Run `git clone` followed by the copied URL.
 - Press enter, and Git will clone the repository to your local machine.
 
-## Credits
-### Content
-### Media
+# Credits
+### Here's a collection of sites that were helpful in creating this website:
+
+- [Django documentation](https://getbootstrap.com/docs/4.1/getting-started/introduction/) is used for guidance with models, forms, templates, and various aspects of Django development.
+
+- [Bootstrap documentation](https://getbootstrap.com/docs/4.1/getting-started/introduction/) is used to increase knowledge of Bootstrap framework.
+
+- [W3 Schools](https://www.w3schools.com/)
+
+
+- [Stackoverflow](https://stackoverflow.com/) was used for:
+  - Scroll down the page upon clicking the Edit button.
+
+- Tutorials and YouTube videos:
+  - [Portfolio Project 4: The guide to MVP](https://www.youtube.com/watch?v=vIv1c6RLBac)
+  - [Assessments Q&A: Focus on PP4](https://www.youtube.com/watch?v=_0VXXEgchw4)
+  - [The guide to the Github Agile Tool](https://www.youtube.com/watch?v=U_dMihBgUNY)
+
+- Other sites:
+  - [Styling Crispy forms](https://blog.appseed.us/django-forms-styling-with-bootstrap/)
+  - [Organize Imports](https://peps.python.org/pep-0008/)
+  - [Generate Slugs](https://www.kodnito.com/posts/slugify-urls-django/)
+  - [How to override default django templates](https://www.makeuseof.com/override-default-templates-django-allauth/)
+  - [Automated testing tutorial](https://www.youtube.com/watch?v=6I_haJimhPY)
+
+- The base structure of the project is inspired by the walkthrough project `I think therefore I blog`.
+- Readme structure is based on [readme template](https://github.com/DebbieBergstrom/Culture-Club/blob/main/README.md) belonging to `Culture Club project` created by [DebbieBergstrom](https://github.com/DebbieBergstrom).
+- The favicon used in the application was taken from [favicon io](https://favicon.io/).
+- The fonts used in the application was taken from [Google Fonts](https://fonts.google.com/).
+
+- [Favicon Generator](https://favicon.io/) to create a favicon in the browser tab.
+- [Pexels Free Images](https://www.pexels.com/sv-se/) to find some user profile mockup images.
+- [Freepik Free Images](https://www.freepik.com/free-photos-vectors/user-profile) to find user profile symbols and default images.
