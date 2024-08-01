@@ -142,9 +142,30 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
 ## Features
 
 ### Existing Features
-- __The Header__  
-- __The footer__
-
+- Logo is the application's name and it takes you to the home page when clicking on it.
+- A navigation bar with links to:
+  - Home page
+  - Games: it shows all games in a list
+  - Create a post or a game
+  - Register and log in if the user is logged out 
+  - Just log out if the user is logged in.
+- An informative message that tells if the user is logged in.
+- About us section: It provides information about the website
+- Read a news post
+- Read game details
+- Create a news post
+- Create a game 
+- Edit a news post
+- Edit a game 
+- Delete a news post
+- Delete a game
+- View posts list on homepage
+- Navigate to see more posts
+- Filter posts by game genre
+- Register an account
+- Log in 
+- Log out
+- A footer that tells about the website's creator associated with clickable Social media links.
 ### Additional Features to Implement
 
 ## Testing
