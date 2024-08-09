@@ -13,6 +13,11 @@ class PostList(generic.ListView):
     template_name = "news/index.html"
     paginate_by = 6
 
+class GameList(generic.ListView):
+    queryset = Game.objects.all()
+    template_name = "news/game_list.html"
+    paginate_by = 6
+
 def create(request):
     if request.method == "POST":
         post_form = PostForm(data=request.POST)

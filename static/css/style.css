@@ -56,11 +56,7 @@ body {
 }
 
 .image-flash {
-    position: absolute;
-    bottom: 5%;
     min-width: 30%;
-    left: -2px;
-    background-color: #188181;
 }
 
 .scale {
@@ -69,9 +65,10 @@ body {
 }
 
 .game-title {
-    color: white;
+    color: black;
     margin: 4px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .masthead {
