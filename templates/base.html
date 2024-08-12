@@ -1,11 +1,12 @@
 {% load static %}
 
 {% url 'home' as home_url %}
-{% url 'create' as create_url %}
+{% url 'create_post' as create_url %}
 {% url 'game_list' as games_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'create_game' as create_game_url %}
 
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@
 
 <head>
     <title>Gaming News | Gamers Digest</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,6 +23,7 @@
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -35,7 +37,6 @@
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
-
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
@@ -50,13 +51,19 @@
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
                             href="{% url 'home' %}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == create_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'create' %}">Create</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Create
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item nav-link {% if request.path == create_url %}active{% endif %}"
+                                href="{% url 'create_post' %}">Post</a>
+                            <a class="dropdown-item nav-link" href="{% url 'create_game' %}">Game</a>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == games_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'game_list' %}">Games</a>
+                        <a class="nav-link " aria-current="page" href="{% url 'game_list' %}">Games</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
@@ -121,8 +128,8 @@
         </p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     {% block extras %}
     {% endblock %}

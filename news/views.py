@@ -3,7 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Game
-from .forms import PostForm
+from .forms import PostForm, GameForm
 from django.utils.text import slugify
 
 # Create your views here.
@@ -18,7 +18,7 @@ class GameList(generic.ListView):
     template_name = "news/game_list.html"
     paginate_by = 6
 
-def create(request):
+def create_post(request):
     if request.method == "POST":
         post_form = PostForm(data=request.POST)
         if post_form.is_valid():
@@ -37,6 +37,27 @@ def create(request):
         {"post_form": post_form,
         },
     )
+
+def create_game(request):
+    if request.method == "POST":
+        game_form = GameForm(request.POST, request.FILES)
+        if game_form.is_valid():
+            game = game_form.save(commit=False)
+            game.slug = slugify(game.title)
+            game.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Game is created'
+            )
+    game_form = GameForm()
+
+    return render(
+        request,
+        "news/create_game.html",
+        {"game_form": game_form,
+        },
+    )
+
 
 def post_delete(request, slug):
     """
