@@ -71,6 +71,18 @@ def post_delete(request, slug):
 
     return HttpResponseRedirect(reverse('home'))
 
+def game_delete(request, slug):
+    """
+    view to delete game
+    """
+    queryset = Game.objects.all()
+    game = get_object_or_404(queryset, slug=slug)
+    game.delete()
+    messages.add_message(request, messages.SUCCESS, 'Game deleted!')
+
+    return HttpResponseRedirect(reverse('game_list'))
+
+
 def post_edit(request, slug):
     """
     view to edit posts

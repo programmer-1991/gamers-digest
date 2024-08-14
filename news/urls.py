@@ -10,5 +10,6 @@ urlpatterns = [
     path('<slug:slug>/', views.post, name='post'),
     path('edit/<slug:slug>/', views.post_edit, name='post_edit'),
     path('delete/<slug:slug>/', views.post_delete, name='post_delete'),
+    path('delete/game/<slug:slug>/', views.game_delete, name='game_delete'),
 ]
 

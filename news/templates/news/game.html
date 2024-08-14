@@ -5,6 +5,10 @@
 <div class="container">
     <div class="text-center">
         <h1>{{ game.title }}</h1>
+        {% if user.is_authenticated %}
+        <button class="btn btn-edit" slug="{{ post.slug }}">Edit</button>
+        <button class="btn btn-delete" slug="{{ game.slug }}">Delete</button>
+        {% endif %}
     </div>
     <div class="row">
         <div class="col card mb-4 mt-3 left top game-card cell">
@@ -64,7 +68,7 @@
                                     <h2 class="card-title">{{ post.title }}</h2>
                                 </a>
                                 <p class="card-text">{{ post.intro }}</p>
-                                <hr/>
+                                <hr />
                                 <p class="card-text text-muted h6">{{ post.created_on }}</p>
                             </div>
                         </div>
@@ -92,4 +96,29 @@
         {% endif %}
     </div>
 
+    <!-- Delete confirmation modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete post?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete your post?
+                    This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a id="deleteConfirm" href="#" class="btn
+          btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {% endblock content %}
+
+    {% block extras %}
+    <script src="{% static 'js/games.js' %}"></script>
+    {% endblock %}
