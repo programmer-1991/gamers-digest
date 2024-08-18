@@ -11,5 +11,6 @@ urlpatterns = [
     path('edit/<slug:slug>/', views.post_edit, name='post_edit'),
     path('delete/<slug:slug>/', views.post_delete, name='post_delete'),
     path('delete/game/<slug:slug>/', views.game_delete, name='game_delete'),
-]
+    path('edit/game/<slug:slug>/', views.game_edit, name='game_edit'),
 
+]

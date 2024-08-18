@@ -4,9 +4,9 @@
 
 <div class="container">
     <div class="text-center">
-        <h1>{{ game.title }}</h1>
+        <h1 id="title">{{ game.title }}</h1>
         {% if user.is_authenticated %}
-        <button class="btn btn-edit" slug="{{ post.slug }}">Edit</button>
+        <button class="btn btn-edit" slug="{{ game.slug }}">Edit</button>
         <button class="btn btn-delete" slug="{{ game.slug }}">Delete</button>
         {% endif %}
     </div>
@@ -14,9 +14,9 @@
         <div class="col card mb-4 mt-3 left top game-card cell">
             <div class="image-container">
                 {% if "placeholder" in game.featured_image.url %}
-                <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                <img class="card-img-top" id="image" src="{% static 'images/default.jpg' %}" alt="placeholder image">
                 {% else %}
-                <img class="card-img-top" src=" {{ game.featured_image.url }}" alt="{{ post.title }}">
+                <img class="card-img-top" id="image" src=" {{ game.featured_image.url }}" alt="{{ post.title }}">
                 {% endif %}
             </div>
             <div class="card-body details">
@@ -25,19 +25,19 @@
                     <div class="row">
                         <div class="col">
                             <dt>Developed by</dt>
-                            <dd>{{ game.developer }}</dd>
+                            <dd id="developer">{{ game.developer }}</dd>
                             <dt>Published by</dt>
-                            <dd>{{ game.publisher}}</dd>
+                            <dd id="publisher">{{ game.publisher}}</dd>
                             <dt>Platform</dt>
-                            <dd>{{ platform }}</dd>
+                            <dd id="platform" data-id={{game.platform}}>{{ platform }}</dd>
                         </div>
                         <div class="col">
                             <dt>Genre</dt>
-                            <dd>{{ game.genre }}</dd>
+                            <dd id="genre">{{ game.genre }}</dd>
                             <dt>Release date</dt>
-                            <dd>{{ game.release }}</dd>
+                            <dd id="release">{{ game.release }}</dd>
                             <dt>Game rating</dt>
-                            <dd>{{ game.age_rating}}</dd>
+                            <dd id="age">{{ game.age_rating}}</dd>
                         </div>
                     </div>
                 </dl>
@@ -47,7 +47,7 @@
             <div class="card-body">
                 <div class="card-text">
                     <h3>Description</h3>
-                    {{ game.description | safe }}
+                    <div id="description">{{ game.description | safe }}</div>
                 </div>
             </div>
         </div>
@@ -96,6 +96,29 @@
         {% endif %}
     </div>
 
+    {% load crispy_forms_tags %}
+
+    <!-- Creating New Posts -->
+    <div class="col-md-4 card mb-4 mt-3" style="display:none;" id="form_card">
+        <div class="card-body">
+            {% if user.is_authenticated %}
+            <h3>Leave a game:</h3>
+            <p>Posting as: {{ user.username }}</p>
+    
+            <form id="form" method="post" class="mt-3">
+                {{ form | crispy }}
+                {% csrf_token %}
+                <!--submit button-->
+                <button id="submit_button" type="submit" class="btn btn-signup btn-lg">Submit</button>
+    
+            </form>
+            {% else %}
+            <p class="center">Log in to add a post</p>
+            {% endif %}
+        </div>
+    </div>
+    
+    
     <!-- Delete confirmation modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">

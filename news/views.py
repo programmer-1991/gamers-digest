@@ -18,47 +18,110 @@ class GameList(generic.ListView):
     template_name = "news/game_list.html"
     paginate_by = 6
 
+def create(form):
+
+    if form.is_valid():
+        object = form.save(commit=False)
+        object.slug = slugify(object.title)
+        object.save()
+        return object
+    else:
+        print(form.errors)
+
+def post(request, slug):
+
+    queryset = Post.objects.all()
+    post = get_object_or_404(queryset, slug=slug)
+    game = post.topic
+    
+    form = PostForm()
+
+    return render(
+        request,
+        "news/post.html",
+        {"post": post, "game": game, "form": form},
+    )
+
+def game(request, slug):
+
+    queryset = Game.objects.all()
+    game = get_object_or_404(queryset, slug=slug)
+    platform = Game.PLATFORM[game.platform][1]
+    posts = game.posts.all().order_by("-created_on")
+    post_count = game.posts.all()
+    form = GameForm()
+    return render(
+        request,
+        "news/game.html",
+        {"game": game, "posts": posts, "platform": platform, 
+         "post_count": post_count, "form": form
+        },
+    )
+
 def create_post(request):
     if request.method == "POST":
-        post_form = PostForm(data=request.POST)
-        if post_form.is_valid():
-            post = post_form.save(commit=False)
-            post.slug = slugify(post.title)
-            post.save()
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Post is created'
-            )
-    post_form = PostForm()
+        form = PostForm(request.POST)
+        if create(form):
+            messages.add_message(request, messages.SUCCESS, 'Post is created')
+    form = PostForm()
 
     return render(
         request,
         "news/create_post.html",
-        {"post_form": post_form,
+        {"form": form,
         },
     )
 
 def create_game(request):
     if request.method == "POST":
-        game_form = GameForm(request.POST, request.FILES)
-        if game_form.is_valid():
-            game = game_form.save(commit=False)
-            game.slug = slugify(game.title)
-            game.save()
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Game is created'
-            )
-    game_form = GameForm()
+        form = GameForm(request.POST, request.FILES)
+        if create(form):
+            messages.add_message(request, messages.SUCCESS, 'Game created!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error creating game!')
+    form = GameForm()
 
     return render(
         request,
         "news/create_game.html",
-        {"game_form": game_form,
+        {"form": form,
         },
     )
 
+        
 
+def post_edit(request, slug):
+    """
+    view to edit posts
+    """
+    if request.method == "POST":
+        queryset = Post.objects.all()
+        post = get_object_or_404(queryset, slug=slug)
+        form = PostForm(data=request.POST, instance=post)
+        if create(form):
+            messages.add_message(request, messages.SUCCESS, 'Post updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating post!')
+
+    return HttpResponseRedirect(reverse('post', args=[slug]))
+
+def game_edit(request, slug):
+    """
+    view to edit posts
+    """
+    if request.method == "POST":
+        queryset = Game.objects.all()
+        game = get_object_or_404(queryset, slug=slug)
+        form = GameForm(request.POST, request.FILES, instance=game)
+        if create(form):
+            messages.add_message(request, messages.SUCCESS, 'Game updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating game!')
+
+    return HttpResponseRedirect(reverse('game', args=[slug]))
+
+
+    
 def post_delete(request, slug):
     """
     view to delete comment
@@ -81,62 +144,4 @@ def game_delete(request, slug):
     messages.add_message(request, messages.SUCCESS, 'Game deleted!')
 
     return HttpResponseRedirect(reverse('game_list'))
-
-
-def post_edit(request, slug):
-    """
-    view to edit posts
-    """
-    if request.method == "POST":
-        queryset = Post.objects.all()
-        post = get_object_or_404(queryset, slug=slug)
-        form = PostForm(data=request.POST, instance=post)
-        
-        if form.is_valid():
-            post = form.save(commit=False)
-            #post.game = game
-            post.save()
-            messages.add_message(request, messages.SUCCESS, 'Post updated!')
-        else:
-            messages.add_message(request, messages.ERROR, 'Error updating post!')
-
-    return HttpResponseRedirect(reverse('post', args=[slug]))
-
-def post(request, slug):
-    queryset = Post.objects.all()
-    post = get_object_or_404(queryset, slug=slug)
-    game = post.topic
-    if request.method == "POST":
-        post_form = PostForm(data=request.POST)
-        if post_form.is_valid():
-            post = post_form.save(commit=False)
-            post.slug = slugify(post.title)
-            post.save()
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Post is created'
-            )
-    form = PostForm()
-    return render(
-        request,
-        "news/post.html",
-        {"post": post, "game": game, "form": form},
-    )
-
-def game(request, slug):
-
-    queryset = Game.objects.all()
-    game = get_object_or_404(queryset, slug=slug)
-    platform = Game.PLATFORM[game.platform][1]
-    posts = game.posts.all().order_by("-created_on")
-    post_count = game.posts.all()
-    
-    return render(
-        request,
-        "news/game.html",
-        {"game": game, "posts": posts, "platform": platform, 
-         "post_count": post_count,
-        },
-    )
-    
     

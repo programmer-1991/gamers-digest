@@ -10,7 +10,7 @@
         <p>Posting as: {{ user.username }}</p>
         
         <form id="postForm" method="post" class="mt-3">
-            {{ post_form | crispy }}
+            {{ form | crispy }}
             {% csrf_token %}
             <!--submit button-->
             <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
