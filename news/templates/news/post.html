@@ -11,7 +11,7 @@
                 <p class="post-subtitle"><a href="{% url 'game' game.slug %}" id="topic" topic="{{ game.id }}">{{ game }}</a> | updated on
                     {{ post.updated_on }}</p>
                 <!--Edit button-->
-                {% if user.is_authenticated %}
+                {% if user.is_superuser %}
                 <button class="btn btn-edit" slug="{{ post.slug }}">Edit</button>
                 <button class="btn btn-delete" slug="{{ post.slug }}">Delete</button>
                 {% endif %}
@@ -37,7 +37,7 @@
 <!-- Creating New Posts -->
 <div class="col-md-4 card mb-4 mt-3" style="display: none;" id = "form">
     <div class="card-body">
-        {% if user.is_authenticated %}
+        {% if user.is_superuser %}
         <h3>Leave a post:</h3>
         <p>Posting as: {{ user.username }}</p>
 
