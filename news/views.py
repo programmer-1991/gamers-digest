@@ -9,17 +9,55 @@ from django.utils.text import slugify
 # Create your views here.
 
 class PostList(generic.ListView):
+    """
+    Returns all published posts in :model:`news.Post`
+    and displays them in a page of six posts.
+    **Context**
+
+    ``queryset``
+        All instances of :model:`news.Post`
+    ``paginate_by``
+        Number of posts per page.
+
+    **Template:**
+
+    :template:`news/index.html`
+    """
     queryset = Post.objects.all()
     template_name = "news/index.html"
     paginate_by = 6
 
 class GameList(generic.ListView):
+    """
+    Returns all games in :model:`news.Game`
+    and displays them in a page of six games.
+    **Context**
+
+    ``queryset``
+        All instances of :model:`news.Game`
+    ``paginate_by``
+        Number of games per page.
+
+    **Template:**
+
+    :template:`news/game_list.html`
+    """
     queryset = Game.objects.all()
     template_name = "news/game_list.html"
     paginate_by = 6
 
 def create(form):
+    """
+    Takes in an argument, if it's valid then it's converted 
+    from a modelform to a model object and then sent to the
+    database.
+    **Context**
 
+    ``form``
+        a modelform object.
+    ``object``
+        a converted model object.
+    """
     if form.is_valid():
         object = form.save(commit=False)
         object.slug = slugify(object.title)
@@ -29,7 +67,24 @@ def create(form):
         print(form.errors)
 
 def post(request, slug):
+    """
+    Display an individual :model:`news.Post`.
 
+    **Context**
+
+    ``post``
+        An instance of :model:`news.Post`.
+
+    ``form``
+        An instance of :form:`news.PostForm`
+    
+    ``game``
+        the topic that the post is about
+
+    **Template:**
+
+    :template:`blog/post.html`
+    """
     queryset = Post.objects.all()
     post = get_object_or_404(queryset, slug=slug)
     game = post.topic
@@ -43,7 +98,24 @@ def post(request, slug):
     )
 
 def game(request, slug):
+    """
+    Display an individual :model:`news.Game`.
 
+    **Context**
+
+    ``game``
+        An instance of :model:`news.Game`.
+    ``posts``
+        All posts related to the game.
+    ``post_count``
+        A count of posts related to the game.
+    ``form``
+        An instance of :form:`news.GameForm`
+
+    **Template:**
+
+    :template:`blog/game.html`
+    """
     queryset = Game.objects.all()
     game = get_object_or_404(queryset, slug=slug)
     platform = Game.PLATFORM[game.platform][1]
@@ -59,6 +131,21 @@ def game(request, slug):
     )
 
 def create_post(request):
+    """
+    Create an individual post.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`blog.Post`.
+
+    ``form``
+        An instance of :form:`news.PostForm`
+    
+    **Template:**
+
+    :template:`news/create_post.html`
+    """
     if request.method == "POST":
         form = PostForm(request.POST)
         if create(form):
@@ -73,6 +160,21 @@ def create_post(request):
     )
 
 def create_game(request):
+    """
+    Create an individual game.
+
+    **Context**
+
+    ``game``
+        An instance of :model:`news.Game`.
+
+    ``form``
+        An instance of :form:`news.GameForm`
+    
+    **Template:**
+
+    :template:`news/create_game.html`
+    """
     if request.method == "POST":
         form = GameForm(request.POST, request.FILES)
         if create(form):
@@ -92,7 +194,14 @@ def create_game(request):
 
 def post_edit(request, slug):
     """
-    view to edit posts
+    Display an individual post for edit.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`news.Post`.
+    ``form``
+        An instance of :form:`news.PostForm`
     """
     if request.method == "POST":
         queryset = Post.objects.all()
@@ -107,7 +216,14 @@ def post_edit(request, slug):
 
 def game_edit(request, slug):
     """
-    view to edit posts
+    Display an individual game for edit.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`news.Game`.
+    ``form``
+        An instance of :form:`news.GameForm`
     """
     if request.method == "POST":
         queryset = Game.objects.all()
@@ -124,7 +240,12 @@ def game_edit(request, slug):
     
 def post_delete(request, slug):
     """
-    view to delete comment
+    Delete an individual post.
+
+    **Context**
+
+    ``post``
+        An instance of :model:`news.Post`.
     """
     queryset = Post.objects.all()
     post = get_object_or_404(queryset, slug=slug)
@@ -136,7 +257,12 @@ def post_delete(request, slug):
 
 def game_delete(request, slug):
     """
-    view to delete game
+    Delete an individual game.
+
+    **Context**
+
+    ``game``
+        An instance of :model:`news.Game`.
     """
     queryset = Game.objects.all()
     game = get_object_or_404(queryset, slug=slug)
