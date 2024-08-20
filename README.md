@@ -122,8 +122,8 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
 
   - **News Post View:**
     - Each news post can be viewed in its entirety on a dedicated page.
-    - This view presents an engaging card that presents the title, topic, intro, and updated date.
-    - Also two clickable buttons, 'Edit' and 'Delete', are included when the poster is logged in.
+    - This view is an engaging card that presents the title, topic, intro, and updated date.
+    - Two buttons 'Edit' and 'Delete', are only accessible to superusers.
     - Right after that a detailed content about the news.
     - Below the news content, the user can see a list of related posts to the game
 
@@ -134,6 +134,7 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
 
   - **Game details view:**
     - The game page shows details about each game.
+    - Two buttons 'Edit' and 'Delete', are only accessible to superusers.
     - The user can see a game cover, description, and details: such as developer, publisher, platform, etc.
     - Related news can be seen at the bottom of the page.
 
@@ -153,12 +154,13 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
 - About us section: It provides information about the website
 - Read a news post
 - Read game details
-- Create a news post
-- Create a game 
-- Edit a news post
-- Edit a game 
-- Delete a news post
-- Delete a game
+- Only administrators have access to the following functions:
+  - Create a news post
+  - Create a game 
+  - Edit a news post
+  - Edit a game 
+  - Delete a news post
+  - Delete a game
 - View posts list on homepage
 - Navigate to see more posts
 - Filter posts by game genre

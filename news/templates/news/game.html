@@ -96,39 +96,33 @@
         {% endif %}
     </div>
 
+    
+    {% if user.is_superuser %}
+    <!-- Update details -->
     {% load crispy_forms_tags %}
-
-    <!-- Creating New Posts -->
     <div class="col-md-4 card mb-4 mt-3" style="display:none;" id="form_card">
         <div class="card-body">
-            {% if user.is_authenticated %}
-            <h3>Leave a game:</h3>
-            <p>Posting as: {{ user.username }}</p>
-    
+            <h3>Update game details:</h3>    
             <form id="form" method="post" class="mt-3" enctype="multipart/form-data">
                 {{ form | crispy }}
                 {% csrf_token %}
-                <!--submit button-->
+                <!--submit form-->
                 <button id="submit_button" type="submit" class="btn btn-signup btn-lg">Submit</button>
     
             </form>
-            {% else %}
-            <p class="center">Log in to add a post</p>
-            {% endif %}
         </div>
     </div>
     
-    
-    <!-- Delete confirmation modal -->
+    <!-- confirm deletion -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Delete post?</h5>
+                    <h5 class="modal-title" id="deleteModalLabel">Delete game?</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to delete your post?
+                    Are you sure you want to delete your game?
                     This action cannot be undone.
                 </div>
                 <div class="modal-footer">
@@ -139,6 +133,7 @@
             </div>
         </div>
     </div>
+    {% endif %}
 
     {% endblock content %}
 

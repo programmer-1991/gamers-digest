@@ -46,7 +46,7 @@ class GameList(generic.ListView):
     template_name = "news/game_list.html"
     paginate_by = 6
 
-def create(form):
+def create(form, user):
     """
     Takes in an argument, if it's valid then it's converted 
     from a modelform to a model object and then sent to the
@@ -58,13 +58,14 @@ def create(form):
     ``object``
         a converted model object.
     """
-    if form.is_valid():
-        object = form.save(commit=False)
-        object.slug = slugify(object.title)
-        object.save()
-        return object
-    else:
-        print(form.errors)
+    if user.is_superuser:
+        if form.is_valid():
+            object = form.save(commit=False)
+            object.slug = slugify(object.title)
+            object.save()
+            return object
+        else:
+            print(form.errors)
 
 def post(request, slug):
     """
@@ -148,7 +149,7 @@ def create_post(request):
     """
     if request.method == "POST":
         form = PostForm(request.POST)
-        if create(form):
+        if create(form, request.user):
             messages.add_message(request, messages.SUCCESS, 'Post is created')
     form = PostForm()
 
@@ -177,7 +178,7 @@ def create_game(request):
     """
     if request.method == "POST":
         form = GameForm(request.POST, request.FILES)
-        if create(form):
+        if create(form, request.user):
             messages.add_message(request, messages.SUCCESS, 'Game created!')
         else:
             messages.add_message(request, messages.ERROR, 'Error creating game!')
@@ -207,7 +208,7 @@ def post_edit(request, slug):
         queryset = Post.objects.all()
         post = get_object_or_404(queryset, slug=slug)
         form = PostForm(data=request.POST, instance=post)
-        if create(form):
+        if create(form, request.user):
             messages.add_message(request, messages.SUCCESS, 'Post updated!')
         else:
             messages.add_message(request, messages.ERROR, 'Error updating post!')
@@ -229,7 +230,7 @@ def game_edit(request, slug):
         queryset = Game.objects.all()
         game = get_object_or_404(queryset, slug=slug)
         form = GameForm(request.POST, request.FILES, instance=game)
-        if create(form):
+        if create(form, request.user):
             messages.add_message(request, messages.SUCCESS, 'Game updated!')
         else:
             messages.add_message(request, messages.ERROR, 'Error updating game!')
@@ -247,11 +248,12 @@ def post_delete(request, slug):
     ``post``
         An instance of :model:`news.Post`.
     """
-    queryset = Post.objects.all()
-    post = get_object_or_404(queryset, slug=slug)
-    #comment = get_object_or_404(Comment, pk=comment_id)
-    post.delete()
-    messages.add_message(request, messages.SUCCESS, 'Post deleted!')
+    if request.user.is_superuser:
+        queryset = Post.objects.all()
+        post = get_object_or_404(queryset, slug=slug)
+        #comment = get_object_or_404(Comment, pk=comment_id)
+        post.delete()
+        messages.add_message(request, messages.SUCCESS, 'Post deleted!')
 
     return HttpResponseRedirect(reverse('home'))
 
@@ -264,10 +266,11 @@ def game_delete(request, slug):
     ``game``
         An instance of :model:`news.Game`.
     """
-    queryset = Game.objects.all()
-    game = get_object_or_404(queryset, slug=slug)
-    game.delete()
-    messages.add_message(request, messages.SUCCESS, 'Game deleted!')
+    if request.user.is_superuser:
+        queryset = Game.objects.all()
+        game = get_object_or_404(queryset, slug=slug)
+        game.delete()
+        messages.add_message(request, messages.SUCCESS, 'Game deleted!')
 
     return HttpResponseRedirect(reverse('game_list'))
     
