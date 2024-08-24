@@ -235,7 +235,7 @@ def game_edit(request, slug):
         else:
             messages.add_message(request, messages.ERROR, 'Error updating game!')
 
-    return HttpResponseRedirect(reverse('game', args=[slug]))
+    return HttpResponseRedirect(reverse('game', args=[game.slug]))
 
 
     

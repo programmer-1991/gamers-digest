@@ -1,7 +1,9 @@
 body {
     background-color: #F9FAFC;
 }
-
+.social-media{
+    width: 3em;
+}
 a>img{
     width: 100%;
 }

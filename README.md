@@ -2,7 +2,6 @@
 
 Gamers Digest is a website that aims to keep gamers updated with the latest gaming news on different platforms. The site targets people of various ages that are gamers and gives you the opportunity to read news and find details and related news about each game. The website is updated with news regularly to keep users coming back to the site.
 
-
 ## Project goals:
 - __User goals__
   - To keep updated with the latest news in the gaming industry
@@ -24,42 +23,36 @@ Gamers Digest is a website that aims to keep gamers updated with the latest gami
 
 ### User stories
 
-### Epic 1: User Authentication
-This epic focuses on user account management, including registration, login/logout.
-
+### Epic 1: Account Management
 - User Account Registration (MUST HAVE)
-- Easy Login from Landing Page (MUST HAVE)
+- Login to user account (MUST HAVE)
 - Log out of User account (MUST HAVE)
+- Delete user account (SHOULD HAVE)
+- Restore your password (COULD HAVE)
 - Create a list of favourites (COULD HAVE)
+- Full Control Over User Accounts (WON'T HAVE)
 
-### Epic 2: Content Management
-This epic deals with the core functionalities of the blog, such as creating, reading, editing, and deleting posts, as well as interacting with posts through comments and likes.
-
-- Create, Edit & Delete News Posts (MUST HAVE)
-- See Post Overview (SHOULD HAVE)
-- Open a post (MUST HAVE)
+### Epic 2: User Interaction
+- Open a news post (MUST HAVE)
+- Open a game post (MUST HAVE)
 - Leave a comment on a post (COULD HAVE)
-- Bookmark Blog Posts (COULD HAVE)
-- Like/ Unlike Blog Posts (COULD HAVE)
-- Receive Validating Messages (SHOULD HAVE)
-- Follow Other Users (WON'T HAVE)
+- Leave a review on a game (COULD HAVE)
+- Manage content items (WON'T HAVE)
 
-### Epic 3: Administration & Analytics
-This epic encompasses administrative control over the site, including user account management and content moderation, as well as tracking user engagement.
+### Epic 3: Site Management
+- Manage news items (MUST HAVE)
+- Manage game items (MUST HAVE)
+- Receive confirmation messages (SHOULD HAVE)
+- Receive validation messages (SHOULD HAVE)
+- Categorize news posts (COULD HAVE)
+- Categorize game posts (COULD HAVE)
+- Track User Engagement and Analytics (WON'T HAVE)
 
-- Admin - Manage Blog Posts (MUST HAVE)
-- Admin - Categorize Blog Posts (SHOULD HAVE)
-- Admin - Full Control Over User Accounts (COULD HAVE)
-- Admin - Track User Engagement and Analytics (WON'T HAVE)
-
-### Epic 4: User Experience & Accessibility
-This epic is focused on the overall user experience on the site, such as the appearance of the homepage, ease of navigation, and accessibility of information.
-
-- Navigate through a well-designed website (MUST HAVE)
-- Make the landing page Visually Appealing (SHOULD HAVE)
-- Navigate to About Us (SHOULD HAVE)
-- Site pagination for easy navigation (SHOULD HAVE)
-- Receive Page Error Messages (SHOULD HAVE)
+### Epic 4: User Experiences
+- Make the interface visually Appealing (MUST HAVE)
+- Have access to page about website (SHOULD HAVE)
+- Paginate lists for easy navigation (SHOULD HAVE)
+- Receive page load error Messages (SHOULD HAVE)
 
 ## Database
 - __News application database schema__
