@@ -173,7 +173,20 @@ a>img{
 .faded {
     color: rgb(172, 175, 175);
 }
-
 .approval {
     color: rgb(222, 146, 168);
+}
+
+/*social media links*/
+.fab.fa-facebook-square{
+    font-size:1.5em;
+}
+.fab.fa-square-x-twitter{
+    font-size: 1.5em;
+}
+.fab.fa-instagram-square{
+    font-size: 1.5em;
+}
+.fab.fa-youtube-square{
+    font-size: 1.5em;
 }
