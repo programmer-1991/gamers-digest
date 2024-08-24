@@ -124,12 +124,21 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
     - This page is a form for submitting posts.
     - The form has four fields title, slug, intro, and content.
     - New posts, once published, are prominently displayed on the home page.
+  
+  - **Game List View:**
+    - In the game list page the user can view a list of game posts.
+    - Each game is displayed as an engaging card, featuring a clickable picture and game title.
+
+  - **Create Game View:**
+    - This page is a form for submitting games.
+    - The form has nine fields title, slug, genre , description, platform, age rating, developer, publisher, release date and featured_image.
+    - New games, once added, are prominently displayed on the game list page.
 
   - **Game details view:**
     - The game page shows details about each game.
     - Two buttons 'Edit' and 'Delete', are only accessible to superusers.
-    - The user can see a game cover, description, and details: such as developer, publisher, platform, etc.
-    - Related news can be seen at the bottom of the page.
+    - The user can see a description and a picture, and details: such as developer, publisher, platform, etc.
+    - Related news to the game can be seen at the bottom of the page.
 
 - __Wireframes__
 
