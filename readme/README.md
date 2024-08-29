@@ -62,7 +62,7 @@ When creating the database structure schema for this project, I utilized the [db
 
 <center> 
 
-![Database Schema image](directory)
+![Database Schema image](./ERD.png)
 
 </center>
 
