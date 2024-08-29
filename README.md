@@ -27,6 +27,7 @@ Gamers Digest is a website that aims to keep gamers updated with the latest gami
 - User Account Registration (MUST HAVE)
 - Login to user account (MUST HAVE)
 - Log out of User account (MUST HAVE)
+- Show authentication status (SHOULD HAVE)
 - Delete user account (SHOULD HAVE)
 - Restore your password (COULD HAVE)
 - Create a list of favourites (COULD HAVE)
@@ -224,6 +225,83 @@ The HTML pages were extracted from dev tools using Google Chrome's inspect featu
 | news/tests/test_models.py | All clear, no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/pep8/ci_linter_test_models.png)</details> | ✅ |
 | news/tests/test_urls.py | All clear, no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/pep8/ci_linter_test_urls.png)</details> | ✅ |
 | news/tests/test_forms.py | All clear, no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/pep8/ci_linter_test_forms.png)</details> | ✅ |
+
+&nbsp;
+
+## Manual Testing
+&nbsp;
+### Security Testing
+
+Ensuring that users cannot access or modify content created by the superuser is crucial for maintaining the integrity and security of the application. The table demonstrates the application's robustness in handling unauthorized access attempts, ensuring user data security and integrity.
+
+The following tests were conducted to verify that unauthorized access attempts are properly handled.
+
+| Test Case | Description | Method | Expected Outcome | Actual Outcome | Result |
+| --------- | ----------- | ------ | ---------------- | -------------- | --------- |
+| Create Post Unauthorized Access | Non-admin attempting to create a post | Manual URL manipulation | The news-post creation form  is unavailable | A message tells this feature is only available to superusers | ✅ |
+| Create Game Unauthorized Access | Non-admin attempting to create a game | Manual URL manipulation | The game-post creation form is unavailable | A message tells this feature is only available to superusers | ✅ |
+| Edit Post Unauthorized Access | Non-admin attempting to edit a post | Manual URL manipulation | The adress non-functional | Redirect to post details page | ✅ | 
+| Delete Post Unauthorized Access | Non-admin attempting to delete a post | Manual URL manipulation | The adress non-functional | Redirect to game list page | ✅ |
+| Edit Game Unauthorized Access | Non-admin attempting to edit a game |  Manual URL manipulation | The adress non-functional | Redirect to game details page | ✅ |
+| Delete Game Unauthorized Access | Non-admin attempting to delete a post | Manual URL manipulation | The adress non-functional | Redirect to game list page | ✅ |
+
+### Testing user stories
+
+**Epic 1: User Authentication & Profile Management**
+
+| User Goals | How this was achieved | Screenshot |
+| --- | --- | --- |
+| [User Account Registration (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/2) | Implemented a user registration system allowing visitors to create new accounts. Register option is in the navigation bar. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_sign_up.png)</details> |
+| [Log Out of User Account (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/3) | Provided logout functionality for user accounts. Log out option is in the navigation bar.| <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_log_out.png)</details>|
+| [Log in to User Account (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/3) | Provided login functionality for user accounts. Log in option is in the navigation bar.| <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_log_out.png)</details>|
+| [Show authentication status (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/3) | The user can see opposite the logo a confirmation message that tells the authentication status.| <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_log_out.png)</details>|
+| [Full Control Over User Accounts (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/43) | This feature was not implemented in this phase, but admin can have full control in admin site. | No result image |
+| | | |
+
+&nbsp;
+**Epic 2: User Interaction**
+
+| User Goals | How this was achieved | Screenshot |
+| --- | --- | --- |
+| [Open a news post (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/7) | Users can open news posts and read details. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_create_new_post.png)</details> |
+| [Open a game post (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/8) | Users can open game posts and read details. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_blogpost_detail.png)</details> |
+| [ Manage content items (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/30) | Non-admin users can't manage data. | No result image |
+|
+
+&nbsp;
+
+**Epic 3: Administration & Analytics**
+
+| Site Owner Goals | How this was achieved | Screenshot |
+| --- | --- | --- |
+| [Manage news items (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/13) | Admin can create, update and delete news items.| <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_admin_full_control.png)</details> |
+| [Manage game items (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/14) | Admin can create, update and delete game items. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_admin_postlist.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_admin_commentlist.png)</details> |
+| [Receive confirmation messages (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/15) | Admin gets a confirmation message when: login, logout, create, edit and delete content items. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_admin_manage_post.png)</details> |
+| [ Receive error messages (SHOULD HAVE) ](https://github.com/DebbieBergstrom/Culture-Club/issues/15) | Admin gets an error message when item creation, update, and deletion fails. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_admin_manage_post.png)</details> |
+| [ Track User Engagement and Analytics (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/16) | This feature for tracking analytics was not implemented in the current phase. | No result image |
+| | | |
+
+&nbsp;
+
+**Epic 4: User Experience & Accessibility**
+
+- Make the interface visually Appealing (MUST HAVE)
+- Have access to page about website (SHOULD HAVE)
+- Paginate lists for easy navigation (SHOULD HAVE)
+- Receive page load error Messages (SHOULD HAVE)
+
+
+| User Goals | How to achieve this | Screenshot |
+| --- | --- | --- |
+| [ Interact visually Appealing interface (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/17) | Design the interface in a well structured manner, Make it responsive and accessible. | <details><summary>Screenshot of result</summary>![Result](docs/features/login_landing_page.png)</details> |
+| [ access page about the website (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/18) | Included clear navigation to the 'About Us' section to inform users about the website. Can always be seen in the navbar or the collapsed menu in smaller screens. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_about_us.png)</details> |
+| [ Browse lists (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/32) | Implemented pagination for easy browsing of news and game posts. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_pagination_next.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_pagination_prev.png)</details> |
+| [Receive page load error Messages (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/42) | User gets an error page if something isn't working correctly. | <details><summary>Screenshot of result</summary>![Result](docs/features/500_error_page.png)</details> |
+| | | |
+
+&nbsp;
+### Responsivness:
+Tested the website responsiveness for different device types using [responsive design checker](https://responsivedesignchecker.com/) tool. The result was that heroku server doesn't allow access for this tool. Tested also with [Am I Responsive](https://ui.dev/amiresponsive) and [Responsive test tool](https://responsivetesttool.com/) and they showed the same result as in the first test.
 
 ### Bugs
 #### Solved bugs

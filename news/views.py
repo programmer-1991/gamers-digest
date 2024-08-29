@@ -235,10 +235,8 @@ def game_edit(request, slug):
         else:
             messages.add_message(request, messages.ERROR, 'Error updating game!')
 
-    return HttpResponseRedirect(reverse('game', args=[game.slug]))
+    return HttpResponseRedirect(reverse('game', args=[slug]))
 
-
-    
 def post_delete(request, slug):
     """
     Delete an individual post.

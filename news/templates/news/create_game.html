@@ -5,10 +5,8 @@
 <!-- Creating New Posts -->
 <div class="col-md-4 card mb-4 mt-3">
     <div class="card-body">
-        {% if user.is_authenticated %}
+        {% if user.is_superuser %}
         <h3>Leave a game:</h3>
-        <p>Posting as: {{ user.username }}</p>
-        
         <form id="gameForm" method="post" class="mt-3" enctype="multipart/form-data">
             {{ form | crispy }}
             {% csrf_token %}
@@ -16,11 +14,9 @@
             <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
         </form>
         {% else %}
-        <p class="center">Log in to add a post</p>
+        <p class="center">Only superusers can create content.</p>
         {% endif %}
-
-</div>
+    </div>
 </div>
 
 {% endblock content %}
-
