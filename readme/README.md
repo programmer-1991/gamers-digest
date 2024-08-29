@@ -87,9 +87,9 @@ When creating the database structure schema for this project, I utilized the [db
 This database schema lays out the structure for the Gamers Digest application, giving an opportunity for gamers to easily keep updated with the latest gaming news and game details including releases.
 
 ## Design
-- __Color__
+### Color
   - Use various sources that suggest different color combinations
-- __Typography__
+### Typography
   - Select suitable fonts for:
     - post-list: topic, title, intro, details
     - post page: title, topic, details, content
@@ -97,7 +97,7 @@ This database schema lays out the structure for the Gamers Digest application, g
     - Header: logo, navigation bar, authentication status message
     - footer: informative text, icons
 
-- __Layout__
+### Layout
 The Gamers Digest website is designed with a user-friendly structure, ensuring seamless navigation and easy access to the website's content, which is about gaming. Below is an overview of the website's structure:
 
   - **The header:**
@@ -141,7 +141,49 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
     - The user can see a description and a picture, and details: such as developer, publisher, platform, etc.
     - Related news to the game can be seen at the bottom of the page.
 
-- __Wireframes__
+### Wireframes
+
+The wireframes serve as a visual blueprint for the application. Click on each page to view the wireframe.
+
+<details><summary>Home page</summary>
+<img src="">
+</details>
+<details><summary>About us</summary>
+<img src="">
+</details>
+<details><summary>Register</summary>
+<img src="">
+</details>
+<details><summary>Log in</summary>
+<img src="">
+</details>
+<details><summary>Log out</summary>
+<img src="">
+</details>
+<details><summary>Post list</summary>
+<img src="">
+</details>
+<details><summary>Game list</summary>
+<img src="">
+</details>
+<details><summary>Post details</summary>
+<img src="">
+</details>
+<details><summary>Game details</summary>
+<img src="">
+</details>
+<details><summary>Create New Post</summary>
+<img src="">
+</details>
+<details><summary>Create New Game</summary>
+<img src="">
+</details>
+<details><summary>Update Post</summary>
+<img src="">
+</details>
+<details><summary>Update Game</summary>
+<img src="">
+</details>
 
 ## Features
 
