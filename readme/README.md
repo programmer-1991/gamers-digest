@@ -341,7 +341,236 @@ The following tests were conducted to verify that unauthorized access attempts a
 | [Receive page load error Messages (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/42) | User gets an error page if something isn't working correctly. | <details><summary>Screenshot of result</summary>![Result](docs/features/500_error_page.png)</details> |
 | | | |
 
+### Element Testing:
+
+#### Navbar:
+
+- **`Not logged in user`**
+
+| Feature | Expected Function | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Logo | Redirects to home page | Clicked on logo | Home page loads | ✅ |
+| Posts | Redirects to the post list page | Clicked on the link 'Games' | 'post list' page loads | ✅ |
+| Games | Redirects to the game list page | Clicked on the link 'Games' | 'game list' page loads | ✅ |
+| About Us | Redirects to the 'About Us' page | Clicked on the link 'About Us' | 'About Us' page loads | ✅ |
+| Register | Redirects to the sign up page which contains a form with a 'Sign Up' button | Clicked on the link 'Register' | The Sign-up page loads and the form displays with a 'Sign Up' button | ✅ |
+| Login | Redirects to the login page which contains a form with a 'Sign In' button | Clicked on the link 'Login' | The Sign-in page loads and the form displays with a 'Sign Up' button | ✅ |
+| | |
+
 &nbsp;
+
+- **`Logged in as user`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Logo | Redirects to home page | Clicked on logo | Index page loads | ✅ |
+| "Create" menu (only administrator) | Triggers the dropdown menu | Clicked on "create" link | The dropdown menu is displayed | ✅ |
+| About Us | Redirects to the 'About Us' page. | Clicked on the link 'About Us' | 'About Us' page loads. | ✅ |
+| Posts | Redirects to the post list page | Clicked on the link 'Games' | 'post list' page loads | ✅ |
+| Games | Redirects to the game list page | Clicked on the link 'Games' | 'game list' page loads | ✅ |
+| Logout | Redirects to the logout page. | Clicked on the 'Logout' link | The logout page loads and the form displays with a confirmative question and a sign out button. | ✅ |
+|
+
+&nbsp;
+
+- **`Create drop-down menu, logged in as administrator`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| "New Post" link (only administrator) | Redirects to the 'Create Post' page with the 'Create Post' button visible | Clicked on the link 'Create new Post' | 'Create new Post' page loads and shows the 'Create Post' button | ✅ |
+| "New Game" link (only administrator) | Redirects to the 'Create new Post' page with the 'Create Post' button visible | Clicked on the link 'Create new Post' | 'Create new Post' page loads and shows the 'Create Post' button | ✅ |
+| | |
+
+&nbsp;
+
+#### Sign up page:
+
+- **`Not logged in user`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Username input | Field is required and should be a valid username format | Tested with an empty field, invalid format | Error message is displayed prompting the user to provide a valid username | ✅ |
+| Email input | Field is optional but should be a valid email format if entered | Tested with an empty field and invalid format | Sign up can be successful without email address. Error message displayed prompting the user to provide a valid email address if user type in the field | ✅ |
+| Password input | Field is required and should meet password criteria | Tested with an empty field, invalid criteria | Error message displayed prompting the user to provide a valid password | ✅ |
+| Password confirmation input | Field is required and should match the entered password | Tested with empty field, mismatched passwords | Error message displayed prompting the user to confirm the password correctly | ✅ |
+| "Sign up" button | If the form is valid, the user is redirected to the home page with a message confirming successful registration. If the form is not valid, an error message is displayed. | Clicked the button with valid and non-valid formats | The button functions as expected, redirecting to the appropriate page and displaying the corresponding messages | ✅ |
+| "Sign in" text link | Redirects to the login page | Clicked on the "Sign in" link | The login page and form were successfully loaded | ✅ |
+| | |
+
+&nbsp;
+
+#### Home page:
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+| | |
+
+&nbsp;
+
+#### Item lists:
+
+- **`Post list page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Post card title link | Redirects to the post details page | Clicked on the title link of a post | Successfully redirected to the post details page | ✅ |
+| Pagination | Displays pagination if the page has more than 6 posts | Added more than 6 posts to the list | Pagination is displayed.| ✅ |
+| 'Next' and 'Previous' buttons for switching pages | Navigates to the correct page | Clicked on Next and Previous buttons in pagination. | Successfully navigated to the correct page based on the button clicked | ✅ |
+| | |
+
+&nbsp;
+
+- **`Game list page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Game card image link | Redirects to the game details page | Clicked on the image link of a game card | Successfully redirected to the game details page | ✅ |
+| Pagination | Displays pagination if the page has more than 6 games | Added more than 6 games to the list | Pagination is displayed.| ✅ |
+| 'Next' and 'Previous' buttons for switching pages | Navigates to the correct page | Clicked on Next and Previous buttons in pagination. | Successfully navigated to the correct page based on the button clicked | ✅ |
+| | |
+
+&nbsp;
+
+#### Post details:
+
+- **`Not logged in, Logged in as user`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| News post topic link | Redirects to game details page | Clicked on post topic link | Successfully redirected to the game details page. | ✅ |
+| News post source link | Redirects you to the external source of the news post. | Clicked on the source link | Successfully redirected to the external source page  | ✅ |
+| | |
+
+&nbsp;
+
+- **`Logged in as administrator`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| News post topic link | Redirects to game details page | Clicked on post topic link | Successfully redirected to the game details page. | ✅ |
+| News post source link | Redirects you to the external source of the news post. | Clicked on the source link | Successfully redirected to the external source page  | ✅ |
+| 'Edit' button | Changes made to the post will be saved | Clicked the 'Edit' button | The page scrolls down and displays a form to edit | ✅ |
+| 'Delete' button  | Deletes a post | Clicked on the 'Delete' button | A modal popup shows to ask user confirmation for deletion. | ✅ |
+| | |
+
+#### Game details:
+
+- **`Not logged in, Logged in as user`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| related posts links to the game | Redirects to the specific post details page | Clicked on the post title link | Successfully redirected to the post details page. | ✅ |
+| | |
+
+&nbsp;
+
+- **`Logged in as administrator`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| related posts links to the game | Redirects to the specific post details page | Clicked on the post title link | Successfully redirected to the post details page. | ✅ |
+| 'Edit' button | Changes made to the game post will be saved | Clicked the 'Edit' button | The page scrolls down and displays a form to edit | ✅ |
+| 'Delete' button  | Deletes a game post | Clicked on the 'Delete' button | A modal popup shows to ask user confirmation for deletion. | ✅ |
+| | |
+
+&nbsp;
+
+#### Create Items:
+
+- **`Create New Post page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| "Create" button | Upon filling in the required fields and clicking "Create Post", the new news post should be saved and the user should be redirected to the post list page | Filled in required fields and clicked on the "Create Post" button | Successfully created a new post, redirected to the blog post detail page, and displayed the newly created post | ✅ |
+| Title input field (required) | Must enter a title to create a post | Entered a title for the blog post | Successfully required and accepted the title input | ✅ |
+| Content input field (required) | Must enter content to create a post | Entered content for the news post | Successfully required and accepted the content input | ✅ |
+| Intro input field (Optional) | Allows entering an intro to create a post | Entered intro for the news post | Successfully accepted the intro input | ✅ |
+| Image upload (Not implemented) | Allows uploading an image for the news post, uses a placeholder if no image is uploaded | Uploaded an image for the news post | Successfully displayed the uploaded image (or placeholder if none) |  |
+| Topic selection (required) | Requires selecting a topic from the list | Selected a topic for the news post | Successfully required and accepted the selection of a topic | ✅ |
+| | |
+
+&nbsp;
+
+- **`Create New Game page`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| "Create" button | Upon filling in the required fields and clicking "Create Game", the new game post should be saved and the user should be redirected to the game details page | Filled in required fields and clicked on the "Create" button | Successfully created a new game, redirected to the game listpage, and displayed the newly created post | ✅ |
+| Title input field (required) | Must enter a title to create a game | Entered a title for the game post | Successfully required and accepted the title input | ✅ |
+| Genre input field | Must enter a genre to create a game | Entered an excerpt for the blog post | Successfully required and accepted the genre input | ✅ |
+| Description input field (required) | Must enter a description to create a game | Entered a description for the game post | Successfully required and accepted the title input | ✅ |
+| Platform selection (required) | Requires selecting a platform from the list | Selected a platform for the game post | Successfully required and accepted the selection of a platform | ✅ |
+| Age rating input field (required) | Must enter an age rating to create a post | Entered an age rating for the game post | Successfully accepted the age rating input | ✅ |
+| Developer input field (required) | Must enter a developer name to create a game post | Entered a developer name for the game post | Successfully accepted the developer name input | ✅ |
+| Publisher input (required) | Validates input and requires a publisher name for the game. | Entered a publisher for the game. | Successfully validated and accepted the publisher input | ✅ |
+| Date of Release input (required) | Validates input and requires a date of release for the game. | Entered a date of release for the game. | Successfully validated and accepted the date of release input | ✅ |
+| Image upload (Required) | Must upload an image to create a game post, uses a placeholder if no image is uploaded | Uploaded an image for the game post | Successfully displayed the uploaded image (or placeholder if none) | ✅ |
+| | |
+
+&nbsp;
+
+#### Edit Items: 
+
+- **`Update post button, logged in as administrator`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| "Update" button | When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the news post details page with a confirmation success message "The post is updated". | Made changes and clicked on the "Update" button. | Changes were successfully saved, redirected to the news post detail page with a confirmation success message "The post is updated". | ✅ |
+| | |
+
+&nbsp;
+
+- **`Update game button, authorized/logged in as administrator`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| "Update" button | When changes are made and the "Update" button is clicked, the changes should be saved, the user should be redirected to the game detail page with a confirmation success message "The game is updated". | Made changes and click on the "Update" button | Changes were successfully saved, redirected to the game details page with a confirmation success message "The game is updated".  | ✅ |
+| | |
+
+&nbsp;
+
+#### Delete Items:
+
+- **`Delete post button, authorized/ logged in as administrator`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| "Yes, Delete" button | When the "Yes, Delete" button is clicked, the post is deleted, and the user is redirected to the "My Posts" page with a confirmation success message "The post is deleted". | Clicked on the "Delete" button | Successfully deleted the post, redirected to the "My Posts" page, and displayed a confirmation success message | ✅ |
+| "Close" button | Redirects to the post details page | Clicked on the "Close" button | Successfully redirected to the post details page. | ✅ |
+| | |
+
+&nbsp;
+
+- **`Delete game button, authorized/ logged in as administrator`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| "Yes, Delete" button | When the "Yes, Delete" button is clicked, the game is deleted, and the user is redirected to the game list page with a confirmation success message "The game is deleted" | Clicked on the "Delete" button | Successfully deleted the game, redirected to the game list page, and displayed a confirmation success message | ✅ |
+| "Close" button | Redirects to the game details page | Clicked on the "Close" button | Successfully redirected to the game details page. | ✅ |
+| | |
+
+&nbsp;
+
+#### Footer
+
+- **`all pages`**
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Facebook link | Redirects to Facebook official website | Clicked on the Facebook icon/link | Successfully redirected to Facebook official website | ✅ |
+| X link | Redirects to X official website | Clicked on the X icon/link | Successfully redirected to X official website | ✅ |
+| Instagram link | Redirects to Instagram official website | Clicked on the Instagram icon/link | Successfully redirected to Instagram official website | ✅ |
+| Youtube link | Redirects to Youtube official website | Clicked on the Youtube icon/link | Successfully redirected to Youtube official website | ✅ |
+| | |
+
+&nbsp;
+
 ### Responsivness:
 Tested the website responsiveness for different device types using [responsive design checker](https://responsivedesignchecker.com/) tool. The result was that heroku server doesn't allow access for this tool. Tested also with [Am I Responsive](https://ui.dev/amiresponsive) and [Responsive test tool](https://responsivetesttool.com/) and they showed the same result as in the first test.
 

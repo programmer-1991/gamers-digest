@@ -221,7 +221,7 @@ def game_edit(request, slug):
 
     **Context**
 
-    ``post``
+    ``game``
         An instance of :model:`news.Game`.
     ``form``
         An instance of :form:`news.GameForm`

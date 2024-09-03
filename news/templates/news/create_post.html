@@ -6,12 +6,12 @@
 <div class="col-md-4 card mb-4 mt-3">
     <div class="card-body">
         {% if user.is_superuser %}
-        <h3>Create a post:</h3>        
+        <h3>Create a new post:</h3>        
         <form id="postForm" method="post" class="mt-3">
             {{ form | crispy }}
             {% csrf_token %}
             <!--submit button-->
-            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+            <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Create</button>
         </form>
         {% else %}
         <p class="center">Only superusers can create content.</p>
