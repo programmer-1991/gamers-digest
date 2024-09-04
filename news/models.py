@@ -15,6 +15,7 @@ class Game(models.Model):
     publisher = models.CharField(max_length=32)
     release = models.DateField()
     featured_image = CloudinaryField('image', default='placeholder')
+
     def __str__(self):
         return f"{self.title}"
 
@@ -26,6 +27,8 @@ class Post(models.Model):
     topic = models.ForeignKey(Game, on_delete = models.CASCADE, related_name = "posts")
     created_on = models.DateTimeField(auto_now_add = True)
     updated_on = models.DateTimeField(auto_now = True)
+    featured_image = CloudinaryField('image', default='placeholder')
+
     class Meta:
         ordering = ["-created_on"]
     def __str__(self):

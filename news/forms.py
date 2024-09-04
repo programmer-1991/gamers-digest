@@ -11,5 +11,5 @@ class GameForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'topic', 'intro', 'content')
+        fields = ('title', 'topic', 'intro','featured_image','content')
 
