@@ -1,5 +1,55 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #cb2323;
+}
+
+main h1 {
+    font-size: 1.75em;
+}
+
+main p
+
+h2 {
+    font-size: 1.4em;
+}
+
+/*******************Colors**********************/
+.red-o {
+    color: #E84610;
+}
+
+.light {
+    background-color: #8c8a8a;
+    color: rgb(69, 102, 81);
+}
+
+.nav-link {
+    font-size: 1.1em;
+    color: #170072;
+}
+
+.dark-bg {
+    background-color: hsl(210, 21%, 32%);
+}
+
+.main-bg {
+    background-color: #000000;
+}
+
+.card {
+    background-color: rgb(255, 215, 215);
+    color:#000000
+}
+/************************************************/
+
+
+
+.post-card{
+    height: 460px;
+    overflow: hidden;
+}
+
+.thin {
+    font-weight: 300;
 }
 .social-media{
     width: 3em;
@@ -7,6 +57,7 @@ body {
 a>img{
     width: 100%;
 }
+
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -32,29 +83,6 @@ a>img{
     padding-top: 0;
 }
 
-.red-o {
-    color: #E84610;
-}
-
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #445261;
-}
-
-.main-bg {
-    background-color: #F9FAFC;
-}
-
-.card {
-    /*background-color: transparent;*/
-}
 
 .image-container {
     position: relative;
@@ -111,7 +139,6 @@ a>img{
 
 .post-link {
     text-decoration: none;
-    color: #445261;
 }
 
 .post-link:hover,

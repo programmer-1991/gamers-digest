@@ -88,7 +88,8 @@ This database schema lays out the structure for the Gamers Digest application, g
 
 ## Design
 ### Color
-  - Use various sources that suggest different color combinations
+  - Used color picker manually and chose colors simultaneously for backgrounds and texts. 
+
 ### Typography
   - Select suitable fonts for:
     - post-list: topic, title, intro, details

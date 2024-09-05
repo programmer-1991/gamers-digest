@@ -1,16 +1,41 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #06ad00;
 }
 
-#form{
-    display: none;
+.post-card{
+    height: 460px;
+    overflow: hidden;
 }
 
+.social-media{
+    width: 3em;
+}
+a>img{
+    width: 100%;
+}
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
+}
+
+.cell {
+    min-width: 20em;
+}
+
+.description {
+    flex: 2 0 0%;
+}
+
+.game-card {
+    max-width: 100%;
+    border: #0d6efd 1em double;
+    padding: 1em;
+}
+
+.description {
+    padding-top: 0;
 }
 
 .red-o {
@@ -30,12 +55,11 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #ffffff;
 }
 
 .card {
-    border: none;
-    background-color: transparent;
+    /*background-color: transparent;*/
 }
 
 .image-container {
@@ -43,11 +67,7 @@ body {
 }
 
 .image-flash {
-    position: absolute;
-    bottom: 5%;
     min-width: 30%;
-    left: -2px;
-    background-color: #188181;
 }
 
 .scale {
@@ -56,9 +76,10 @@ body {
 }
 
 .game-title {
-    color: white;
+    color: black;
     margin: 4px;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .masthead {
@@ -158,7 +179,20 @@ body {
 .faded {
     color: rgb(172, 175, 175);
 }
-
 .approval {
     color: rgb(222, 146, 168);
+}
+
+/*social media links*/
+.fab.fa-facebook-square{
+    font-size:1.5em;
+}
+.fab.fa-square-x-twitter{
+    font-size: 1.5em;
+}
+.fab.fa-instagram-square{
+    font-size: 1.5em;
+}
+.fab.fa-youtube-square{
+    font-size: 1.5em;
 }

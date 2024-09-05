@@ -3,10 +3,13 @@
 
 <div class="masthead">
   <div class="container">
-    <div class="row g-0">
-      <div class="col-md-6 masthead-text">
+    <div class="row g-0 d-flex">
+      <div class="col-md-6 masthead-text text-center flex-fill ">
+        <div class="image-container">
+          <img class="card-img-top img-fluid" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
+        </div>
         <!-- Post title goes in these h1 tags -->
-        <h1 class="p-4" id="title">{{ post.title }}</h1>
+        <h1 class="p-4 fs-3" id="title">{{ post.title }}</h1>
         <!-- Post author goes before the | the post's created date goes after -->
         <p class="post-subtitle"><a href="{% url 'game' game.slug %}" id="topic" topic="{{ game.id }}">{{ game }}</a> |
           updated on
@@ -22,7 +25,7 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col card mb-4  mt-3 left  top">
+    <div class="col card mb-4  mt-3 left p-3">
       <div class="card-intro" id="intro">
         {{ post.intro }}
       </div>
@@ -38,9 +41,9 @@
 <!-- Update details -->
 {% load crispy_forms_tags %}
 <div class="col-md-4 card mb-4 mt-3" style="display: none;" id="form">
-  <div class="card-body">
+  <div class="card-body justify-content-center" style="min-width: 90%;">
     <h3>Update post details:</h3>
-    <form id="postForm" method="post" class="mt-3">
+    <form id="postForm" method="post" class="mt-3" enctype="multipart/form-data">
       {{ form | crispy }}
       {% csrf_token %}
       <!--submit form-->

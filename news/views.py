@@ -148,7 +148,7 @@ def create_post(request):
     :template:`news/create_post.html`
     """
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if create(form, request.user):
             messages.add_message(request, messages.SUCCESS, 'Post is created')
     form = PostForm()
@@ -207,7 +207,7 @@ def post_edit(request, slug):
     if request.method == "POST":
         queryset = Post.objects.all()
         post = get_object_or_404(queryset, slug=slug)
-        form = PostForm(data=request.POST, instance=post)
+        form = PostForm(request.POST, request.FILES, instance=post)
         if create(form, request.user):
             messages.add_message(request, messages.SUCCESS, 'Post updated!')
         else:
