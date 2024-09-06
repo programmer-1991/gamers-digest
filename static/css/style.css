@@ -2,15 +2,36 @@ body {
     background-color: #cb2323;
 }
 
+.image-container{
+    margin-block: auto;
+}
+
+.col{
+    min-width: min-content;
+}
+
+.cell {
+    margin: .4em;
+}
+
 main h1 {
     font-size: 1.75em;
 }
 
-main p
+main p {
+
+}
+
+dd, dt {
+    min-width: max-content;
+}
+    
+
 
 h2 {
     font-size: 1.4em;
 }
+
 
 /*******************Colors**********************/
 .red-o {
@@ -65,24 +86,16 @@ a>img{
     color: #4A4A4F;
 }
 
-.cell {
-    min-width: 20em;
-}
-
-.description {
-    flex: 2 0 0%;
-}
-
-.game-card {
-    max-width: 100%;
-    border: #0d6efd 1em double;
-    padding: 1em;
-}
 
 .description {
     padding-top: 0;
 }
 
+.game-card {
+    -max-width: 100%;
+    -border: #0d6efd 1em double;
+    padding: 1em;
+}
 
 .image-container {
     position: relative;
