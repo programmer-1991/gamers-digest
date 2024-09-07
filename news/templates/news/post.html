@@ -1,36 +1,36 @@
 {% extends 'base.html' %} {% block content %}
 {% load static %}
 
-<div class="masthead">
-  <div class="container">
-    <div class="row g-0 d-flex">
-      <div class="col-md-6 masthead-text text-center flex-fill ">
-        <div class="image-container">
-          <img class="card-img-top img-fluid" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
-        </div>
-        <!-- Post title goes in these h1 tags -->
-        <h1 class="p-4 fs-3" id="title">{{ post.title }}</h1>
-        <!-- Post author goes before the | the post's created date goes after -->
-        <p class="post-subtitle"><a href="{% url 'game' game.slug %}" id="topic" topic="{{ game.id }}">{{ game }}</a> |
-          updated on
-          {{ post.updated_on }}</p>
-        <!--Edit button-->
-        {% if user.is_superuser %}
-        <button class="btn btn-edit" slug="{{ post.slug }}">Edit</button>
-        <button class="btn btn-delete" slug="{{ post.slug }}">Delete</button>
-        {% endif %}
-      </div>
+<div class="container p-4">
+  <div class="row g-0">
+    <div class="col-sm-10 col-lg-7  masthead-text text-center p-3 auto">
+      <!-- Post title goes in these h1 tags -->
+      <h1 class="p-2 fs-3" id="title">{{ post.title }}</h1>
+      <!-- Post author goes before the | the post's created date goes after -->
+      <p class="post-subtitle"><a href="{% url 'game' game.slug %}" id="topic" topic="{{ game.id }}">{{ game }}</a>
+        |
+        updated on
+        {{ post.updated_on }}</p>
+      <!--Edit button-->
+      {% if user.is_superuser %}
+      <button class="btn btn-edit mx-4 " slug="{{ post.slug }}">Edit</button>
+      <button class="btn btn-delete mx-4 danger" slug="{{ post.slug }}">Delete</button>
+      {% endif %}
     </div>
   </div>
 </div>
+
 <div class="container">
   <div class="row">
-    <div class="col card mb-4  mt-3 left p-3">
+    <div class="col-lg-9 col-sm-12 card mb-4 mt-3 left p-3 auto">
       <div class="card-intro" id="intro">
         {{ post.intro }}
       </div>
       <div class="card-body" id="content">
         {{ post.content | safe }}
+      </div>
+      <div class="image-container">
+        <img class="card-img-top img-fluid" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
       </div>
     </div>
   </div>
@@ -40,19 +40,19 @@
 {% if user.is_superuser %}
 <!-- Update details -->
 {% load crispy_forms_tags %}
-<div class="col-md-4 card mb-4 mt-3" style="display: none;" id="form">
-  <div class="card-body justify-content-center" style="min-width: 90%;">
-    <h3>Update post details:</h3>
-    <form id="postForm" method="post" class="mt-3" enctype="multipart/form-data">
-      {{ form | crispy }}
-      {% csrf_token %}
-      <!--submit form-->
-      <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-
-    </form>
+<div class="container">
+  <div class="col-sm-12 col-lg-9 card mb-4 mt-3 auto" style="display: none;" id="form">
+    <div class="card-body">
+      <h3>Update post details:</h3>
+      <form id="postForm" method="post" class="mt-3" enctype="multipart/form-data">
+        {{ form | crispy }}
+        {% csrf_token %}
+        <!--submit form-->
+        <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+      </form>
+    </div>
   </div>
 </div>
-
 <!-- confirm deletion -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog">
