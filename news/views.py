@@ -220,7 +220,7 @@ def post_edit(request, slug):
         else:
             messages.add_message(request, messages.ERROR, 'Error updating post!')
 
-    return HttpResponseRedirect(reverse('post', args=[slug]))
+    return HttpResponseRedirect(reverse('post', args=[post.slug]))
 
 def game_edit(request, slug):
     """
@@ -242,7 +242,7 @@ def game_edit(request, slug):
         else:
             messages.add_message(request, messages.ERROR, 'Error updating game!')
 
-    return HttpResponseRedirect(reverse('game', args=[slug]))
+    return HttpResponseRedirect(reverse('game', args=[game.slug]))
 
 def post_delete(request, slug):
     """
