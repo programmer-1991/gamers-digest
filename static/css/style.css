@@ -31,13 +31,13 @@ main h1 {
 }
 
 main p {
-
+    
 }
 
 dd, dt {
     min-width: max-content;
 }
-    
+
 
 
 h2 {
@@ -55,10 +55,6 @@ h2 {
     color: rgb(69, 102, 81);
 }
 
-.nav-link {
-    font-size: 1.1em;
-    color: #170072;
-}
 
 .dark-bg {
     background-color: hsl(210, 21%, 32%);
@@ -74,8 +70,30 @@ h2 {
 }
 /************************************************/
 
+/*******************links************************/
 
+.nav-link {
+    font-size: 1.1em;
+    color: #170072;
+}
+.post-link {
+    text-decoration: none;
+}
+.post-link:hover,
+.page-link {
+    color: #E84610;
+}
+.link {
+    color: #107a7a;
+    text-decoration: none;
+}
 
+.link:hover,
+.link:active {
+    color: #065656;
+    text-decoration: underline;
+}
+/************************************/
 .post-card{
     height: 460px;
     overflow: hidden;
@@ -162,14 +180,7 @@ a>img{
     z-index: 100;
 }
 
-.post-link {
-    text-decoration: none;
-}
 
-.post-link:hover,
-.page-link {
-    color: #E84610;
-}
 
 .post-title {
     margin-top: 10%;
@@ -195,16 +206,6 @@ a>img{
     color: #198754;
 }
 
-.link {
-    color: #107a7a;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #065656;
-    text-decoration: underline;
-}
 
 .btn-like {
     color: #E84610;
@@ -219,16 +220,11 @@ a>img{
     font-weight: 500;
 }
 
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
 
 .faded {
     color: rgb(172, 175, 175);
 }
+
 .approval {
     color: rgb(222, 146, 168);
 }

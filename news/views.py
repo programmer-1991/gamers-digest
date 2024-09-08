@@ -155,11 +155,11 @@ def create_post(request):
             return HttpResponseRedirect(reverse('post', args=[slug]))
             messages.add_message(request, messages.SUCCESS, 'Post is created')
     form = PostForm()
-
+    create = 0
     return render(
         request,
         "news/create_post.html",
-        {"form": form,
+        {"form": form, "create": create
         },
     )
 
@@ -188,13 +188,13 @@ def create_game(request):
             messages.add_message(request, messages.SUCCESS, 'Game created!')
         else:
             messages.add_message(request, messages.ERROR, 'Error creating game!')
-   
+    create = 1
     form = GameForm()
 
     return render(
         request,
         "news/create_game.html",
-        {"form": form,
+        {"form": form, "create": create
         },
     )
 
