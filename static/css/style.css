@@ -196,13 +196,13 @@ a>img{
 }
 
 .link {
-    color: #23BBBB;
+    color: #107a7a;
     text-decoration: none;
 }
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #065656;
     text-decoration: underline;
 }
 

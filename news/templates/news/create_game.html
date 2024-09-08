@@ -11,7 +11,9 @@
             {{ form | crispy }}
             {% csrf_token %}
             <!--submit button-->
+            <div class="text-center">
             <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+            </div>
         </form>
         {% else %}
         <p class="center">Only superusers can create content.</p>

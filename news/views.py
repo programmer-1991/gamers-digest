@@ -150,6 +150,9 @@ def create_post(request):
     if request.method == "POST":
         form = PostForm(request.POST, request.FILES)
         if create(form, request.user):
+            post = create(form, request.user)
+            slug = post.slug
+            return HttpResponseRedirect(reverse('post', args=[slug]))
             messages.add_message(request, messages.SUCCESS, 'Post is created')
     form = PostForm()
 
@@ -179,9 +182,13 @@ def create_game(request):
     if request.method == "POST":
         form = GameForm(request.POST, request.FILES)
         if create(form, request.user):
+            game = create(form, request.user)
+            slug = game.slug
+            return HttpResponseRedirect(reverse('game', args=[slug]))
             messages.add_message(request, messages.SUCCESS, 'Game created!')
         else:
             messages.add_message(request, messages.ERROR, 'Error creating game!')
+   
     form = GameForm()
 
     return render(
