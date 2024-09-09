@@ -45,6 +45,14 @@ class GameList(generic.ListView):
     queryset = Game.objects.all()
     template_name = "news/game_list.html"
     paginate_by = 6
+    
+    def get_queryset(self):
+        # Filter game posts by platform category
+        queryset = Game.objects.all()
+        platform = self.request.GET.get('platform')
+        if platform:
+            queryset = queryset.filter(platform=platform)
+        return queryset
 
 def create(form, user):
     """
@@ -241,6 +249,7 @@ def game_edit(request, slug):
             messages.add_message(request, messages.SUCCESS, 'Game updated!')
         else:
             messages.add_message(request, messages.ERROR, 'Error updating game!')
+            print(form.errors)
 
     return HttpResponseRedirect(reverse('game', args=[game.slug]))
 
