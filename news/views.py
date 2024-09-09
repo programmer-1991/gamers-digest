@@ -152,14 +152,14 @@ def create_post(request):
         if create(form, request.user):
             post = create(form, request.user)
             slug = post.slug
-            return HttpResponseRedirect(reverse('post', args=[slug]))
             messages.add_message(request, messages.SUCCESS, 'Post is created')
+            return HttpResponseRedirect(reverse('post', args=[slug]))
     form = PostForm()
-    create = 0
+    create_menu = 1
     return render(
         request,
         "news/create_post.html",
-        {"form": form, "create": create
+        {"form": form, "create_menu": create_menu
         },
     )
 
@@ -184,17 +184,17 @@ def create_game(request):
         if create(form, request.user):
             game = create(form, request.user)
             slug = game.slug
-            return HttpResponseRedirect(reverse('game', args=[slug]))
             messages.add_message(request, messages.SUCCESS, 'Game created!')
+            return HttpResponseRedirect(reverse('game', args=[slug]))
         else:
             messages.add_message(request, messages.ERROR, 'Error creating game!')
-    create = 1
     form = GameForm()
+    create_menu = 1
 
     return render(
         request,
         "news/create_game.html",
-        {"form": form, "create": create
+        {"form": form, "create_menu": create_menu
         },
     )
 

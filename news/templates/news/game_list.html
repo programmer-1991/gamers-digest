@@ -15,7 +15,7 @@
                         <div class="card-body col">
                             <div class="image-container m-0 text-center" id="game-image">
                                 {% if "placeholder" in game.featured_image.url %}
-                                <img class="card-img-top " src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                                <a href="{% url 'game' game.slug %}"><img class="card-img-top " src="{% static 'images/default.jpg' %}" alt="placeholder image"></a>
                                 {% else %}
                                 <!--<a href="{% url 'game' game.slug %}"><img class="card-img-top" src="{{ game.featured_image.url }}" alt="{{ post.title }}"></a>-->
                                 <a href="{% url 'game' game.slug %}">{% cloudinary game.featured_image format="jpg" width=200 height=300 crop="fit"%}</a>
