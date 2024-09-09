@@ -139,6 +139,10 @@ def game(request, slug):
         },
     )
 
+def about (request):
+        
+        return render(request,"news/about.html",)
+
 def create_post(request):
     """
     Create an individual post.
