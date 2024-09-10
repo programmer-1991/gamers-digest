@@ -14,7 +14,6 @@
                         <div class="card-head image-container">
                             <a href="{% url 'post' post.slug %}" class="post-link"><img class="card-img-top img-fluid" src="{{ post.featured_image.url }}"
                                 alt="{{ post.title }} Image"></a>
-                            <!--<a href="{% url 'post' post.slug %}">{% cloudinary post.featured_image format="jpg" width=200 height=300 crop="fit"%}</a>-->
                         </div>
                         <div class="card-body">
                             <p class="game-title card-text">{{ post.topic }}</p>
