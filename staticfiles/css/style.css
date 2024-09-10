@@ -1,18 +1,163 @@
 body {
-    background-color: #06ad00;
+    background-color: #cb2323;
 }
 
+.image-container{
+    margin-block: auto;
+}
+
+.game-card {
+    height: 17em;
+    width: 17em;
+}
+
+
+.game-image {
+    width: auto;
+    height:100%;
+    overflow: hidden;
+}
+
+
+.width-60 {
+    width:60%;
+}
+
+.auto {
+    margin:auto;
+}
+
+.col{
+    min-width: min-content;
+}
+
+.cell {
+    margin: .4em;
+}
+
+a {
+    text-decoration: none;
+    color: #0dcaf0;
+}
+main h1 {
+    font-size: 1.75em;
+}
+
+main p {
+    
+}
+
+dd, dt {
+    min-width: max-content;
+}
+
+
+
+h2 {
+    font-size: 1.4em;
+}
+
+
+/*******************Colors**********************/
+#logo {
+    color: #0dcaf0;
+} 
+
+.navbar-dark .navbar-nav .nav-link {
+    font-size: 1.1em;
+    color: white;
+}
+
+#active {
+    color:rgb(0, 238, 255);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color:#86b6fd;
+}
+
+.navbar-dark .navbar-nav .nav-link:active {
+    color:rgb(0, 197, 7);
+}
+
+/*Authentication status*/
+.navbar-dark .navbar-text {
+    color: rgb(255, 255, 255, .7);
+}
+
+.red-o {
+    color: #E84610;
+}
+
+.dropdown-item:hover {
+    background-color: #555353 ;
+    -color: rgb(69, 102, 81);
+}
+
+
+.dark-bg {
+    background-color: hsl(210, 21%, 32%);
+}
+
+.main-bg {
+    background-color: #000000;
+}
+
+.card {
+    background-color: rgb(255, 215, 215);
+    color:#000000
+}
+/************************************************/
+/************social media links******************/
+.fab.fa-facebook-square{
+    font-size:1.5em;
+}
+.fab.fa-square-x-twitter{
+    font-size: 1.5em;
+}
+.fab.fa-instagram-square{
+    font-size: 1.5em;
+}
+.fab.fa-youtube-square{
+    font-size: 1.5em;
+}
+footer a:hover {
+    color:#86b6fd
+}
+/*******************links************************/
+.post-link {
+    text-decoration: none;
+}
+.post-link:hover,
+.page-link {
+    color: #E84610;
+}
+.link {
+    color: #107a7a;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #065656;
+    text-decoration: underline;
+}
+/************************************/
 .post-card{
     height: 460px;
     overflow: hidden;
 }
 
+.thin {
+    font-weight: 300;
+}
 .social-media{
     width: 3em;
 }
 a>img{
     width: 100%;
 }
+
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -20,46 +165,16 @@ a>img{
     color: #4A4A4F;
 }
 
-.cell {
-    min-width: 20em;
-}
-
-.description {
-    flex: 2 0 0%;
-}
-
-.game-card {
-    max-width: 100%;
-    border: #0d6efd 1em double;
-    padding: 1em;
-}
 
 .description {
     padding-top: 0;
 }
 
-.red-o {
-    color: #E84610;
-}
+.-game-card {
+    -max-width: 100%;
+    -border: #0d6efd 1em double;
+    -padding: 1em;
 
-.thin {
-    font-weight: 300;
-}
-
-.light-bg {
-    background-color: #fff;
-}
-
-.dark-bg {
-    background-color: #445261;
-}
-
-.main-bg {
-    background-color: #ffffff;
-}
-
-.card {
-    /*background-color: transparent;*/
 }
 
 .image-container {
@@ -82,7 +197,7 @@ a>img{
     text-align: center;
 }
 
-.masthead {
+.-masthead {
     margin-top: 10px;
     overflow: hidden;
     position: relative;
@@ -115,15 +230,7 @@ a>img{
     z-index: 100;
 }
 
-.post-link {
-    text-decoration: none;
-    color: #445261;
-}
 
-.post-link:hover,
-.page-link {
-    color: #E84610;
-}
 
 .post-title {
     margin-top: 10%;
@@ -137,26 +244,18 @@ a>img{
 
 .btn-signup,
 .btn-edit {
-    background-color: #188181;
-    color: #fff;
+    background-color: #198754;
+    color: black;
+    width: 5em;
+    font-weight: 600;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+    background-color: black;
+    color: #198754;
 }
 
-.link {
-    color: #23BBBB;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
-}
 
 .btn-like {
     color: #E84610;
@@ -165,34 +264,18 @@ a>img{
 }
 
 .btn-delete {
-    color: #fff;
-    background: #E84610;
+    color: black;
+    background: red;
+    width: 5em;
+    font-weight: 500;
 }
 
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
 
 .faded {
     color: rgb(172, 175, 175);
 }
+
 .approval {
     color: rgb(222, 146, 168);
 }
 
-/*social media links*/
-.fab.fa-facebook-square{
-    font-size:1.5em;
-}
-.fab.fa-square-x-twitter{
-    font-size: 1.5em;
-}
-.fab.fa-instagram-square{
-    font-size: 1.5em;
-}
-.fab.fa-youtube-square{
-    font-size: 1.5em;
-}

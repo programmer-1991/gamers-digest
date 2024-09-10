@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'cloudinary',
     'news',
-    'django_dbml',
+    #'django_dbml',
 ]
 
 SITE_ID = 1
