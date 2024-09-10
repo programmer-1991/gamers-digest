@@ -23,7 +23,7 @@ Gamers Digest is a website that aims to keep gamers updated with the latest gami
 
 ### User stories
 
-### Epic 1: Account Management
+#### Epic 1: Account Management
 - User Account Registration (MUST HAVE)
 - Login to user account (MUST HAVE)
 - Log out of User account (MUST HAVE)
@@ -33,14 +33,14 @@ Gamers Digest is a website that aims to keep gamers updated with the latest gami
 - Create a list of favourites (COULD HAVE)
 - Full Control Over User Accounts (WON'T HAVE)
 
-### Epic 2: User Interaction
+#### Epic 2: User Interaction
 - Open a news post (MUST HAVE)
 - Open a game post (MUST HAVE)
 - Leave a comment on a post (COULD HAVE)
 - Leave a review on a game (COULD HAVE)
 - Manage content items (WON'T HAVE)
 
-### Epic 3: Site Management
+#### Epic 3: Site Management
 - Manage news items (MUST HAVE)
 - Manage game items (MUST HAVE)
 - Receive confirmation messages (SHOULD HAVE)
@@ -49,7 +49,7 @@ Gamers Digest is a website that aims to keep gamers updated with the latest gami
 - Categorize game posts (COULD HAVE)
 - Track User Engagement and Analytics (WON'T HAVE)
 
-### Epic 4: User Experiences
+#### Epic 4: User Experiences
 - Make the interface visually Appealing (MUST HAVE)
 - Have access to page about website (SHOULD HAVE)
 - Paginate lists for easy navigation (SHOULD HAVE)
@@ -88,7 +88,19 @@ This database schema lays out the structure for the Gamers Digest application, g
 
 ## Design
 ### Color
-  - Used color picker manually and chose colors simultaneously for backgrounds and texts. 
+- The header and the footer, both have a very dark blue background color pleasing to the eye and give a feeling of depth.
+
+#### header
+- Logo has a medium shade of cyan with hints of green. This color has a good contrast with the dark background and gives a feeling of tranquility. 
+- Navigation links are white because they contrast well with the dark background and are comfortable for readers. 
+- Links also have a soft blue hover effect to make them user-friendly.
+- The authentication status message is dimmed which is inspired from the walkthrough project.
+- Social media links has a cyan 
+
+#### footer
+- Text is in white to contrast well with the background color.
+- Social media icons has a cyan color that contrasts well with the background color and make them stand out. 
+- Icons have a hover effect with a soft blue color for user friendliness.
 
 ### Typography
   - Select suitable fonts for:

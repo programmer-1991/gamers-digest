@@ -59,13 +59,39 @@ h2 {
 
 
 /*******************Colors**********************/
+#logo {
+    color: #0dcaf0;
+} 
+
+.navbar-dark .navbar-nav .nav-link {
+    font-size: 1.1em;
+    color: white;
+}
+
+#active {
+    color:rgb(0, 238, 255);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color:#86b6fd;
+}
+
+.navbar-dark .navbar-nav .nav-link:active {
+    color:rgb(0, 197, 7);
+}
+
+/*Authentication status*/
+.navbar-dark .navbar-text {
+    color: rgb(255, 255, 255, .7);
+}
+
 .red-o {
     color: #E84610;
 }
 
-.light {
-    background-color: #8c8a8a;
-    color: rgb(69, 102, 81);
+.dropdown-item:hover {
+    background-color: #555353 ;
+    -color: rgb(69, 102, 81);
 }
 
 
@@ -82,13 +108,23 @@ h2 {
     color:#000000
 }
 /************************************************/
-
-/*******************links************************/
-
-.nav-link {
-    font-size: 1.1em;
-    color: #170072;
+/************social media links******************/
+.fab.fa-facebook-square{
+    font-size:1.5em;
 }
+.fab.fa-square-x-twitter{
+    font-size: 1.5em;
+}
+.fab.fa-instagram-square{
+    font-size: 1.5em;
+}
+.fab.fa-youtube-square{
+    font-size: 1.5em;
+}
+footer a:hover {
+    color:#86b6fd
+}
+/*******************links************************/
 .post-link {
     text-decoration: none;
 }
@@ -243,16 +279,3 @@ a>img{
     color: rgb(222, 146, 168);
 }
 
-/*social media links*/
-.fab.fa-facebook-square{
-    font-size:1.5em;
-}
-.fab.fa-square-x-twitter{
-    font-size: 1.5em;
-}
-.fab.fa-instagram-square{
-    font-size: 1.5em;
-}
-.fab.fa-youtube-square{
-    font-size: 1.5em;
-}

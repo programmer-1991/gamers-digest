@@ -10,7 +10,7 @@
 
 
 <!DOCTYPE html>
-<html class="h-100" lang="en">
+<html class="h-100" lang="en" data-bs-theme="dark">
 
 <head>
     <title>Gaming News | Gamers Digest</title>
@@ -33,14 +33,13 @@
 
     <!--Favicon-->
     <link rel="icon" type="image/ico" href="{% static 'images/favicon.ico' %}">
-
 </head>
 
 <body class="d-flex flex-column h-100 main-bg ">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-light light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand brand text-primary" href="{% url 'home' %}">Gamers Digest</a>
+            <a class="navbar-brand brand" id="logo" href="{% url 'home' %}">Gamers Digest</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -48,51 +47,51 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
+                        <a class="nav-link" id="{% if request.path == home_url %}active{% endif %}" aria-current="page"
                             href="{% url 'home' %}">Home</a>
                     </li>
 
                     {% if user.is_superuser %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {% if create_menu %}active{% endif %}" href="#" id="navbarDropdownMenuLink"
+                        <a class="nav-link dropdown-toggle" id="{% if create_menu %}active{% endif %}" href="#" id="navbarDropdownMenuLink"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Create
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item nav-link {% if request.path == create_post_url %}active{% endif %}"
+                        <div class="dropdown-menu text-light bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item nav-link  {% if request.path == create_post_url %}active{% endif %}"
                                 href="{% url 'create_post' %}">Post</a>
-                            <a class="dropdown-item nav-link {% if request.path == create_game_url %}active{% endif %}"
+                            <a class="dropdown-item nav-link  {% if request.path == create_game_url %}active{% endif %}"
                                 href="{% url 'create_game' %}">Game</a>
                         </div>
                     </li>
                     {% endif%}
 
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="{% url 'game_list' %}">Games</a>
+                        <a class="nav-link" id="{% if request.path == games_url %}active{% endif %}" aria-current="page" href="{% url 'game_list' %}">Games</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                        <a class="nav-link" id="{% if request.path == logout_url %}active{% endif %}" aria-current="page"
                             href="{% url 'account_logout' %}">Logout</a>
                     </li>
 
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                        <a class="nav-link" id="{% if request.path == signup_url %}active{% endif %}" aria-current="page"
                             href="{% url 'account_signup' %}">Register</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                        <a class="nav-link" id="{% if request.path == login_url %}active{% endif %}" aria-current="page"
                             href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == about_url %}active{% endif %}" aria-current="page"
+                        <a class="nav-link" id="{% if request.path == about_url %}active{% endif %}" aria-current="page"
                             href="{% url 'about' %}">About Us</a>
                     </li>
                 </ul>
-                <span class="navbar-text ">
+                <span class="navbar-text p-0">
                     {% if user.is_authenticated %}
                     <p class="text-end m-3">You are logged in as {{ user }}</p>
                     {% else %}
@@ -127,7 +126,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="light mt-auto py-3">
+    <footer class="bg-dark mt-auto py-3">
         <div class="row m-0">
             <div class="col">
                 <p class=" m-0 text-center text-white">Made by enthusiastic gamers</p>
