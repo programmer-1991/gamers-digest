@@ -1,32 +1,70 @@
+
 {% extends "base.html" %}
-
 {% load i18n %}
+{% load account socialaccount %}
+{% load crispy_forms_tags %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock head_title %}
+{% block head_title %}{% trans "Sign Up" %}{% endblock %}
 
 {% block content %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <h3>{% trans "Sign Up" %}</h3>
+<div class="container col-md-8 col-sm-12">
+    <!-- Content Section for Signup Information and Form -->
+    <div class="row">
+        <div class="col card form-card mb-4">
+            <div class="card-body">
+                <!-- Description and Links for New Users -->
+                <h1 class="text-center">{% trans "Join Us" %}</h1>
+                <p class="text-center px-4">
+                    {% trans "Welcome to sign up & join the Culture Club!" %}
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                        </div>
+                    </div>
+                    <!-- Link to 'About Us' for more information -->
+                    <small>
+                        {% trans "Not convinced yet? Read" %}
+                        <a class="link"
+                            href="{% url 'about' %}">{% trans "About Us" %}</a>
+                        {% trans "first." %}
+                    </small>
+                    <br>
+                    <!-- Link for Existing Members to Log In -->
+                    <small>
+                        {% trans "Already a member?" %}
+                        <a class="link"
+                            href="{% url 'account_login' %}">{% trans "Log In" %}</a>
+                        {% trans "." %}
+                    </small>
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
 
-      <p>{% blocktrans %}Welcome back to the Gamers Digest newssite. Do you already have an account? Then please <a
-          class="link" href="{{ login_url }}">sign in</a> instead.{% endblocktrans %}
-      </p>
+                <!-- Signup Form -->
+                <form class="signup mt-4" id="signup_form" method="post"
+                    action="{% url 'account_signup' %}">
+                    {% csrf_token %}
+                    <!-- Crispy Form fields -->
+                    {{ form|crispy }}
+                    <!-- Hidden Redirect Field, if applicable -->
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}"
+                        value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <!-- Submit Button for Signup -->
+                    <div class="text-center mt-4">
+                        <button class="btn form-button btn-lg "
+                            type="submit">{% trans "Sign Up" %}</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
-      <form class="signup " id="signup_form" method="post" action="{% url 'account_signup' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <button class="btn btn-signup right" type="submit">{% trans "Sign Up" %} &raquo;</button>
-      </form>
-    </div>
-  </div>
 </div>
-{% endblock content %}
+
+{% endblock %}

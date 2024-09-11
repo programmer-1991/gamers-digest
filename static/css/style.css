@@ -6,11 +6,30 @@ body {
     margin-block: auto;
 }
 
+.card {
+    background-color: rgb(255, 215, 215);
+    color:#000000
+}
+
 .game-card {
     height: 17em;
     width: 17em;
 }
 
+.form-card {
+    background-color: #263d55;
+    color: white;
+}
+.form-button {
+    color: black;
+    background-color: #0dcaf0;
+    border-radius: .4em;
+    font-weight: 600;
+    text-align: center;
+}
+.form-text {
+    color: rgb(255,255,255,70%);
+}
 
 .game-image {
     width: auto;
@@ -103,10 +122,6 @@ h2 {
     background-color: #000000;
 }
 
-.card {
-    background-color: rgb(255, 215, 215);
-    color:#000000
-}
 /************************************************/
 /************social media links******************/
 .fab.fa-facebook-square{
@@ -137,7 +152,7 @@ footer a:hover {
 }
 
 .link {
-    color: #107a7a;
+    color: #0dcaf0;
     text-decoration: none;
 }
 

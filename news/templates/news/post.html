@@ -41,7 +41,7 @@
 <!-- Update details -->
 {% load crispy_forms_tags %}
 <div class="container">
-  <div class="col-sm-12 col-lg-9 card mb-4 mt-3 auto" style="display: none;" id="form">
+  <div class="col-sm-12 col-lg-9 card form-card mb-4 mt-3 auto" style="display: none;" id="form">
     <div class="card-body">
       <h3>Update post details:</h3>
       <form id="postForm" method="post" class="mt-3" enctype="multipart/form-data">
@@ -49,7 +49,7 @@
         {% csrf_token %}
         <!--submit form-->
         <div class="text-center">
-          <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
+          <button id="submitButton" type="submit" class="btn form-button btn-lg">Submit</button>
         </div>
       </form>
     </div>
