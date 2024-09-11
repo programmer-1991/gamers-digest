@@ -2,13 +2,13 @@ const editButtons = document.getElementsByClassName("btn-edit");
 const contentField = document.getElementById("id_content");
 const titleField = document.getElementById("id_title");
 const introField = document.getElementById("id_intro");
-const topicField = document.getElementById("id_topic")
+const topicField = document.getElementById("id_topic");
 const postForm = document.getElementById("postForm");
 const submitButton = document.getElementById("submitButton");
-const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
+const deleteModal = new window.bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
-const formCard = document.getElementById("form")
+const formCard = document.getElementById("form");
 /**
  * Initializes edit functionality for the provided edit buttons.
  * 
@@ -35,8 +35,8 @@ for (let button of editButtons) {
         formCard.style.display = "block";
         formCard.scrollIntoView();
         postForm.setAttribute("action", `/edit/${slug}/`);
-    })
-};
+    });
+}
 /**
  * Initializes deletion functionality for the provided delete buttons.
  * 
@@ -52,5 +52,5 @@ for (let button of deleteButtons) {
         let slug = e.target.getAttribute("slug");
         deleteConfirm.href = `/delete/${slug}`;
         deleteModal.show();
-    })
-};
+    });
+}

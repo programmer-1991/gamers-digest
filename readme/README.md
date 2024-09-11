@@ -216,12 +216,13 @@ The wireframes serve as a visual blueprint for the application. Click on each pa
   - Delete a game
 - View posts list on homepage
 - Navigate to see more posts
-- Filter posts by game genre
+- Filter games by platform
 - Register an account
 - Log in 
 - Log out
 - A footer that tells about the website's creator associated with clickable Social media links.
 ### Additional Features to Implement
+- Filter posts by content category.
 
 ## Testing
 
@@ -250,14 +251,15 @@ The HTML pages were extracted from dev tools using Google Chrome's inspect featu
 
 | **Tested** | **Result** | **View Result** | **Pass** |
 --- | --- | --- | :---:
-|style.css| No errors |<details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/css_wc3_validation.png)</details>| ✅
+|style.css| No errors |<details><summary>Screenshot of result</summary>![Result](./screenshots/css%20results.png)</details>| ✅
 
 ### Javascript Validation:
 - No errors were found when passing javascript code through the official [Jshint validator](https://jshint.com/). The following metrics were returned:
-  - point 1
-  - point 2
-  - point 3
-  - point 4
+
+| **Tested** | **Result** | **View Result** | **Pass** |
+--- | --- | --- | :---:
+|posts.js| No errors | <details><summary>Screenshot of result</summary>![Result](./screenshots/posts.js%20results.png)</details>| ✅
+|games.js| No errors | <details><summary>Screenshot of result</summary>![Result](./screenshots/games.js%20results.png)</details>| ✅
 
 ### Python Validation:
 [PEP 8](https://pep8ci.herokuapp.com/) serves as a comprehensive style guide for writing Python code, emphasizing consistency and readability as its core principles. It offers guidance on code formatting, variable and function naming conventions, and various best practices. Adhering to PEP 8 principles contributes to enhancing code quality, making it more readable and maintainable.
