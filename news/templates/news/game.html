@@ -4,10 +4,10 @@
 
 <div class="container">
     <div class="text-center">
-        <h1 id="title">{{ game.title }}</h1>
+        <h1 id="title" class="text-light p-4">{{ game.title }}</h1>
         {% if user.is_superuser %}
-        <button class="btn btn-edit" slug="{{ game.slug }}">Edit</button>
-        <button class="btn btn-delete" slug="{{ game.slug }}">Delete</button>
+        <button class="btn btn-edit mb-4" slug="{{ game.slug }}">Edit</button>
+        <button class="btn btn-delete mb-4" slug="{{ game.slug }}">Delete</button>
         {% endif %}
     </div>
     <div class="row d-flex align-items-start">
@@ -61,14 +61,14 @@
         <div class="row">
             <!-- News Entries Column -->
             <div class="col-12 mt-3 left">
-                <h2>Related posts:</h2>
+                <h2 class="text-light my-4">Related posts:</h2>
                 <div class="row">
                     {% for post in posts %}
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <img class="card-img-top img-fluid" src="{{ post.featured_image.url }}"
-                                    alt="{{ post.title }} Image">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img class="card-img-top img-fluid" src="{{ post.featured_image.url }}"
+                                alt="{{ post.title }} Image">
+                                <div class="card-body">
                                 <a href="{% url 'post' post.slug %}" class="post-link">
                                     <h2 class="card-title">{{ post.title }}</h2>
                                 </a>

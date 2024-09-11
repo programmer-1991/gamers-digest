@@ -13,7 +13,7 @@
         {{ post.updated_on }}</p>
       <!--Edit button-->
       {% if user.is_superuser %}
-      <button class="btn btn-edit mx-4 " slug="{{ post.slug }}">Edit</button>
+      <button class="btn btn-edit mx-4" slug="{{ post.slug }}">Edit</button>
       <button class="btn btn-delete mx-4 danger" slug="{{ post.slug }}">Delete</button>
       {% endif %}
     </div>

@@ -6,65 +6,49 @@
 <!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row">
-        <!-- News Entries Column -->
-        <div class="col-12 mt-3 left">
+        <!-- Platform Selection menu -->
+        <div class="col-12 mt-3">
             <div class="row">
-                <!-- Platform Selection menu -->
-                <div class="col-12 mt-3">
-                    <div class="row">
-                        <div class="mt-2 text-center pb-4">
-                            <a href="{% url 'game_list' %}" class="btn ctg btn-secondary">All</a>
-                            <a href="?platform=3" class="btn ctg btn-secondary">Nintendo</a>
-                            <a href="?platform=1" class="btn ctg btn-secondary">Xbox</a>
-                            <a href="?platform=2" class="btn ctg btn-secondary">Playstation</a>
-                            <a href="?platform=4" class="btn ctg btn-secondary">Windows</a>
-                        </div>
-
-                        {% for game in game_list %}
-                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
-                            <div class="card mb-4">
-                                <div class="image-container m-0 text-center" id="game-image">
-                                    {% if "placeholder" in game.featured_image.url %}
-                                    <a href="{% url 'game' game.slug %}"><img class="card-img-top "
-                                            src="{% static 'images/default.jpg' %}" alt="placeholder image"></a>
-                                    {% else %}
-                                    <a href="{% url 'game' game.slug %}"><img class="card-img-top"
-                                            src="{{ game.featured_image.url }}" alt="{{ post.title }}"></a>
-                                    <!--<a href="{% url 'game' game.slug %}">{% cloudinary game.featured_image format="jpg" width=200 height=300 crop="fit"%}</a>-->
-                                    {% endif %}
-                                </div>
-                                <div class="card-body p-0 col">
-                                    <div class="image-flash">
-                                        <p class="game-title">{{ game.title }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {% if forloop.counter|divisibleby:6 %}
-                    </div>
-
-                    <div class="row">
-
-                        {% endif %}
-                        {% endfor %}
-
-                    </div>
+                <div class="mt-2 text-center pb-4">
+                    <a href="{% url 'game_list' %}" class="btn ctg btn-secondary">All</a>
+                    <a href="?platform=3" class="btn btn-secondary">Nintendo</a>
+                    <a href="?platform=1" class="btn btn-secondary">Xbox</a>
+                    <a href="?platform=2" class="btn btn-secondary">Playstation</a>
+                    <a href="?platform=4" class="btn btn-secondary">Windows</a>
                 </div>
             </div>
         </div>
-        {% if is_paginated %}
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                {% if page_obj.has_previous %}
-                <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">PREV &laquo;</a></li>
-                {% endif %}
-                {% if page_obj.has_next %}
-                <li><a href="?page={{ page_obj.next_page_number }}" class="page-link">NEXT &raquo;</a></li>
-                {% endif %}
-            </ul>
-        </nav>
-        {% endif %}
+            <!-- News Entries Column -->
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for game in game_list %}
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+                        <div class="card mb-4">
+                            <div class="image-container m-0 text-center" id="game-image">
+                                {% if "placeholder" in game.featured_image.url %}
+                                <a href="{% url 'game' game.slug %}"><img class="card-img-top "
+                                        src="{% static 'images/default.jpg' %}" alt="placeholder image"></a>
+                                {% else %}
+                                <a href="{% url 'game' game.slug %}"><img class="card-img-top"
+                                        src="{{ game.featured_image.url }}" alt="{{ post.title }}"></a>
+                                <!--<a href="{% url 'game' game.slug %}">{% cloudinary game.featured_image format="jpg" width=200 height=300 crop="fit"%}</a>-->
+                                {% endif %}
+                            </div>
+                            <div class="card-body p-0 col">
+                                <div class="image-flash">
+                                    <p class="game-title">{{ game.title }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% if forloop.counter|divisibleby:6 %}
+                </div>
+                <div class="row">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
-
-    <!-- game_list.html content ends here -->
-    {% endblock %}
+<!-- game_list.html content ends here -->
+{% endblock %}
