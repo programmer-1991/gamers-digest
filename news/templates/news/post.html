@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 {% load static %}
 
-<div class="container p-4">
+<div class="container p-4 position-relative">
   <div class="row g-0">
     <div class="col-sm-10 col-lg-7 masthead-text text-center p-3 auto">
       <!-- Post title goes in these h1 tags -->
@@ -18,10 +18,8 @@
       {% endif %}
     </div>
   </div>
-</div>
 
-<div class="container">
-  <div class="row">
+  <div class="row mt-4">
     <div class="col-lg-9 col-sm-12 card mb-4 mt-3 left p-3 auto">
       <div class="card-intro" id="intro">
         {{ post.intro }}
@@ -34,48 +32,47 @@
       </div>
     </div>
   </div>
-</div>
-
-
-{% if user.is_superuser %}
-<!-- Update details -->
-{% load crispy_forms_tags %}
-<div class="container">
-  <div class="col-sm-12 col-lg-9 card form-card mb-4 mt-3 auto" style="display: none;" id="form">
-    <div class="card-body">
-      <h3>Update post details:</h3>
-      <form id="postForm" method="post" class="mt-3" enctype="multipart/form-data">
-        {{ form | crispy }}
-        {% csrf_token %}
-        <!--submit form-->
-        <div class="text-center">
-          <button id="submitButton" type="submit" class="btn form-button btn-lg">Submit</button>
+  {% if user.is_superuser %}
+  <!-- Update details -->
+  {% load crispy_forms_tags %}
+  <div class="container mt-4">
+    <div class="col-sm-12 col-lg-9 card form-card mb-4 mt-3 auto" style="display: none;" id="form">
+      <div class="card-body">
+        <h3>Update post details:</h3>
+        <form id="postForm" method="post" class="mt-3" enctype="multipart/form-data">
+          {{ form | crispy }}
+          {% csrf_token %}
+          <!--submit form-->
+          <div class="text-center">
+            <button id="submitButton" type="submit" class="btn form-button btn-lg">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- confirm deletion -->
+  <div class="modal fade position-absolute" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deleteModalLabel">Delete post?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </form>
-    </div>
-  </div>
-</div>
-<!-- confirm deletion -->
-<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="deleteModalLabel">Delete post?</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Are you sure you want to delete your post?
-        This action cannot be undone.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <a id="deleteConfirm" href="#" class="btn
-          btn-danger">Delete</a>
+        <div class="modal-body">
+          Are you sure you want to delete your post?
+          This action cannot be undone.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a id="deleteConfirm" href="#" class="btn
+            btn-danger">Delete</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
-{% endif %}
+  {% endif %}
+
+</div>  
 
 {% endblock content %}
 
