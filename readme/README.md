@@ -103,12 +103,9 @@ This database schema lays out the structure for the Gamers Digest application, g
 - Icons have a hover effect with a soft blue color for user friendliness.
 
 ### Typography
-  - Select suitable fonts for:
-    - post-list: topic, title, intro, details
-    - post page: title, topic, details, content
-    - game page: title, details, description
-    - Header: logo, navigation bar, authentication status message
-    - footer: informative text, icons
+  - Used "Lato" font family for the logo which is balanced and legible letterforms and has a friendly and approachable appearance.
+  - Used sans serif font family for the rest of the website elements
+  - Bolder fonts are used for page titles, post and game card titles and buttons 
 
 ### Layout
 The Gamers Digest website is designed with a user-friendly structure, ensuring seamless navigation and easy access to the website's content, which is about gaming. Below is an overview of the website's structure:
@@ -125,18 +122,17 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
 
   - **Home Page:**
     - In the main page the user can view a list of news posts.
-    - Each post is displayed as an engaging card, featuring a clickable title, topic, intro, and creation date.
+    - Each post is displayed as an engaging card, featuring an image, a clickable title, topic, and update date.
 
   - **News Post View:**
     - Each news post can be viewed in its entirety on a dedicated page.
-    - This view is an engaging card that presents the title, topic, intro, and updated date.
-    - Two buttons 'Edit' and 'Delete', are only accessible to superusers.
-    - Right after that a detailed content about the news.
-    - Below the news content, the user can see a list of related posts to the game
+    - This view is an engaging card that presents the title, topic, update date and an intro.
+    - Two buttons 'Edit' and 'Delete', are only visible to superusers.
+    - After that, detailed content about the news ends with an image.
 
   - **Create Post View:**
     - This page is a form for submitting posts.
-    - The form has four fields title, slug, intro, and content.
+    - The form has 5 fields title, slug, image, intro and content.
     - New posts, once published, are prominently displayed on the home page.
   
   - **Game List View:**
@@ -147,12 +143,11 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
     - This page is a form for submitting games.
     - The form has nine fields title, slug, genre , description, platform, age rating, developer, publisher, release date and featured_image.
     - New games, once added, are prominently displayed on the game list page.
-
   - **Game details view:**
-    - The game page shows details about each game.
-    - Two buttons 'Edit' and 'Delete', are only accessible to superusers.
-    - The user can see a description and a picture, and details: such as developer, publisher, platform, etc.
-    - Related news to the game can be seen at the bottom of the page.
+    - The game page shows details about each game and starts with the game title.
+    - Two buttons 'Edit' and 'Delete', are only visible to superusers.
+    - The content is a description and a picture with details: such as developer, publisher, platform, etc.
+    - Below the news content, the user can see a list of posts related to the game.
 
 ### Wireframes
 
