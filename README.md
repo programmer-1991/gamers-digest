@@ -669,6 +669,4 @@ When you create a repository on GitHub.com, it exists as a remote repository. Yo
 - The favicon used in the application was taken from [favicon io](https://favicon.io/).
 - The fonts used in the application was taken from [Google Fonts](https://fonts.google.com/).
 
-- [Favicon Generator](https://favicon.io/) to create a favicon in the browser tab.
-- [Pexels Free Images](https://www.pexels.com/sv-se/) to find some user profile mockup images.
-- [Freepik Free Images](https://www.freepik.com/free-photos-vectors/user-profile) to find user profile symbols and default images.
+
