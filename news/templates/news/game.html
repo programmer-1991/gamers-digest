@@ -23,8 +23,8 @@
                 </div>
                 <div class="col-md-12 col-lg-6 cell">
                     <h3 class="text-center">Game Details</h3>
-                    <dl class="mt-3">
-                        <div class="row">
+                    <div class="row">
+                        <dl class="mt-3">
                             <div class="col">
                                 <dt>Developed by</dt>
                                 <dd id="developer">{{ game.developer }}</dd>
@@ -41,8 +41,8 @@
                                 <dt>Game rating</dt>
                                 <dd id="age">{{ game.age_rating}}</dd>
                             </div>
-                        </div>
-                    </dl>
+                        </dl>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
                         <div class="card h-100">
                             <img class="card-img-top img-fluid" src="{{ post.featured_image.url }}"
                                 alt="{{ post.title }} Image">
-                                <div class="card-body">
+                            <div class="card-body">
                                 <a href="{% url 'post' post.slug %}" class="post-link">
                                     <h2 class="card-title">{{ post.title }}</h2>
                                 </a>
@@ -87,50 +87,51 @@
             </div>
         </div>
     </div>
+</div>
 
+{% if user.is_superuser %}
+<!-- Update details -->
+{% load crispy_forms_tags %}
+<div class="col-sm-12 col-lg-9 card form-card mb-4 mt-3 auto" style="display:none;" id="form_card">
+    <div class="card-body">
+        <h3>Update game details:</h3>
+        <!--submit form-->
+        <form id="form" method="post" class="mt-3" enctype="multipart/form-data">
+            {{ form | crispy }}
+            {% csrf_token %}
+            <div class="text-center">
+                <button id="submit_button" type="submit" class="btn btn-lg form-button">Submit</button>
+            </div>
 
-    {% if user.is_superuser %}
-    <!-- Update details -->
-    {% load crispy_forms_tags %}
-    <div class="col-sm-12 col-lg-9 card form-card mb-4 mt-3 auto" style="display:none;" id="form_card">
-        <div class="card-body">
-            <h3>Update game details:</h3>
-            <!--submit form-->
-            <form id="form" method="post" class="mt-3" enctype="multipart/form-data">
-                {{ form | crispy }}
-                {% csrf_token %}
-                <div class="text-center">
-                    <button id="submit_button" type="submit" class="btn btn-lg form-button">Submit</button>
-                </div>
-
-            </form>
-        </div>
+        </form>
     </div>
+</div>
 
-    <!-- confirm deletion -->
-    <div class="modal fade position-absolute" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Delete game?</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Are you sure you want to delete your game?
-                    This action cannot be undone.
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a id="deleteConfirm" href="#" class="btn
+<!-- confirm deletion -->
+<div class="modal fade position-absolute" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete game?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your game?
+                This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a id="deleteConfirm" href="#" class="btn
           btn-danger">Delete</a>
-                </div>
             </div>
         </div>
     </div>
-    {% endif %}
+</div>
+{% endif %}
 
-    {% endblock content %}
+{% endblock content %}
 
-    {% block extras %}
-    <script src="{% static 'js/games.js' %}"></script>
-    {% endblock %}
+{% block extras %}
+<script src="{% static 'js/games.js' %}"></script>
+{% endblock %}

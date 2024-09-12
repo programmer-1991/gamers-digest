@@ -6,6 +6,20 @@ body {
     margin-block: auto;
 }
 
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.masthead-text {
+    background-color: #445261;
+    color: white;
+    position: relative;
+}
+
 .card {
     background-color: rgb(255, 215, 215);
     color:#000000
@@ -103,7 +117,7 @@ h2 {
     color: white;
 }
 
-#active {
+.cyan {
     color:rgb(0, 238, 255);
 }
 

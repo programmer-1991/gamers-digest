@@ -23,7 +23,7 @@
                     {% for game in game_list %}
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
                         <div class="card mb-4">
-                            <div class="image-container m-0 text-center" id="game-image">
+                            <div class="image-container m-0 text-center">
                                 {% if "placeholder" in game.featured_image.url %}
                                 <a href="{% url 'game' game.slug %}"><img class="card-img-top "
                                         src="{% static 'images/default.jpg' %}" alt="placeholder image"></a>
