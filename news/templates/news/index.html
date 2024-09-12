@@ -9,7 +9,7 @@
         <div class="col-12 mt-3 left p-5 pt-0">
             <div class="row">
                 {% for post in post_list %}
-                <div class="col-md-4 col-sm-6">
+                <div class="col-xs-12 col-md-6 col-lg-4 ">
                     <div class="card mb-4 post-card">
                         <div class="card-head image-container">
                             <a href="{% url 'post' post.slug %}" class="post-link"><img class="card-img-top img-fluid" src="{{ post.featured_image.url }}"
