@@ -6,6 +6,20 @@ body {
     margin-block: auto;
 }
 
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.masthead-text {
+    background-color: #445261;
+    color: white;
+    position: relative;
+}
+
 .card {
     background-color: rgb(255, 215, 215);
     color:#000000
@@ -103,7 +117,7 @@ h2 {
     color: white;
 }
 
-#active {
+.cyan {
     color:rgb(0, 238, 255);
 }
 
@@ -126,7 +140,6 @@ h2 {
 
 .dropdown-item:hover {
     background-color: #555353 ;
-    -color: rgb(69, 102, 81);
 }
 
 
@@ -210,12 +223,6 @@ a>img{
     padding-top: 0;
 }
 
-.-game-card {
-    -max-width: 100%;
-    -border: #0d6efd 1em double;
-    -padding: 1em;
-
-}
 
 .image-container {
     position: relative;
@@ -245,33 +252,6 @@ a>img{
     display: inline-block;
     width: 100%;
 }
-
-.masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-}
-
-.masthead-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
-    width: 150%;
-    background: #445261;
-    -webkit-transform: skew(15deg);
-    -moz-transform: skew(15deg);
-    transform: skew(15deg);
-    z-index: 100;
-}
-
-
 
 .post-title {
     margin-top: 10%;
