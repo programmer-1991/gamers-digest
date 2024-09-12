@@ -154,43 +154,40 @@ The Gamers Digest website is designed with a user-friendly structure, ensuring s
 The wireframes serve as a visual blueprint for the application. Click on each page to view the wireframe.
 
 <details><summary>Home page</summary>
-<img src="">
+<img src="./readme/screenshots/post_list.jpg">
 </details>
 <details><summary>About us</summary>
-<img src="">
+<img src="./readme/screenshots/about_page.jpg">
 </details>
 <details><summary>Register</summary>
-<img src="">
+<img src="./readme/screenshots/sign_up.jpg">
 </details>
 <details><summary>Log in</summary>
-<img src="">
+<img src="./readme/screenshots/login.jpg">
 </details>
 <details><summary>Log out</summary>
-<img src="">
-</details>
-<details><summary>Post list</summary>
-<img src="">
+<img src="./readme/screenshots/sign_out.jpg">
 </details>
 <details><summary>Game list</summary>
-<img src="">
+<img src="./readme/screenshots/game_list.jpg">
 </details>
 <details><summary>Post details</summary>
-<img src="">
+<img src="./readme/screenshots/post_details.jpg">
 </details>
 <details><summary>Game details</summary>
-<img src="">
+<img src="./readme/screenshots/game_details.jpg">
 </details>
 <details><summary>Create New Post</summary>
-<img src="">
+<img src="./readme/screenshots/create_post.jpg">
 </details>
 <details><summary>Create New Game</summary>
-<img src="">
+<img src="./readme/screenshots/create_game.jpg">
 </details>
 <details><summary>Update Post</summary>
-<img src="">
+<img src="./readme/screenshots/update_post.jpg">
 </details>
 <details><summary>Update Game</summary>
-<img src="">
+<img src="./readme/screenshots/update_game.jpg">
 </details>
 
 ## Features
