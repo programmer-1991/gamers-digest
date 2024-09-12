@@ -68,18 +68,18 @@
                     {% endif%}
 
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == games_url %}active-link{% endif %}" aria-current="page"
+                        <a class="nav-link {% if request.path == games_url %}text-primary{% endif %}" aria-current="page"
                             href="{% url 'game_list' %}">Games</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}"
+                        <a class="nav-link {% if request.path == logout_url %}text-primary{% endif %}"
                             aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                     </li>
 
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}"
+                        <a class="nav-link {% if request.path == signup_url %}text-priamry{% endif %}"
                             aria-current="page" href="{% url 'account_signup' %}">Register</a>
                     </li>
 
@@ -89,7 +89,7 @@
                     </li>
                     {% endif %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}text-primary{% endif %}" aria-current="page"
+                        <a class="nav-link {% if request.path == about_url %}text-primary{% endif %}" aria-current="page"
                             href="{% url 'about' %}">About Us</a>
                     </li>
                 </ul>
